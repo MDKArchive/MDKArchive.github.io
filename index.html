@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDK Archive</title>
+    <meta name="description" content="Independent documentary channel. Deeply sourced films on the questions worth asking.">
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="MDK Archive">
+    <meta property="og:description" content="Be the person who actually knows what's going on. Rigorously sourced documentaries on the questions behind the news.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mdkarchive.com">
+
+    <!-- Google Fonts: Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           MDK ARCHIVE - LANDING PAGE
+           Visual System:
+           - Background: #0A0A0A (near-black)
+           - Foreground: #F5F5F0 (archival off-white)
+           - Accent: #C8102E (archival red)
+           - Typography: Playfair Display (serif)
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Playfair Display', Georgia, serif;
+            background-color: #0A0A0A;
+            color: #F5F5F0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Wordmark */
+        .wordmark {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+
+        /* Red accent line */
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background-color: #C8102E;
+            margin: 0 auto 40px auto;
+        }
+
+        /* Tagline */
+        .tagline {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 50px;
+            color: #F5F5F0;
+            opacity: 0.95;
+        }
+
+        /* Description paragraph */
+        .description {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-weight: 400;
+            line-height: 1.7;
+            margin-bottom: 60px;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.85;
+        }
+
+        /* Primary CTA Button */
+        .cta-button {
+            display: inline-block;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #F5F5F0;
+            background-color: transparent;
+            border: 2px solid #F5F5F0;
+            padding: 18px 40px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            margin-bottom: 70px;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #C8102E;
+            border-color: #C8102E;
+            color: #F5F5F0;
+            outline: none;
+        }
+
+        /* Social links row */
+        .social-links {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 50px;
+            letter-spacing: 0.02em;
+        }
+
+        .social-links a {
+            color: #F5F5F0;
+            text-decoration: none;
+            opacity: 0.75;
+            transition: opacity 0.2s ease, color 0.2s ease;
+            padding: 0 4px;
+        }
+
+        .social-links a:hover,
+        .social-links a:focus {
+            opacity: 1;
+            color: #C8102E;
+            outline: none;
+        }
+
+        .social-links .separator {
+            opacity: 0.4;
+            margin: 0 6px;
+        }
+
+        /* Sources link */
+        .sources-link {
+            margin-bottom: 60px;
+        }
+
+        .sources-link a {
+            color: #F5F5F0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid rgba(245, 245, 240, 0.3);
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .sources-link a:hover,
+        .sources-link a:focus {
+            color: #C8102E;
+            border-bottom-color: #C8102E;
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #F5F5F0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: #C8102E;
+            outline: none;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .accent-line {
+                width: 80px;
+                margin-bottom: 30px;
+            }
+
+            .description {
+                margin-bottom: 50px;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+                margin-bottom: 60px;
+            }
+
+            .social-links {
+                font-size: 0.95rem;
+                line-height: 2;
+            }
+
+            .social-links .separator {
+                margin: 0 3px;
+            }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1 class="wordmark">MDK ARCHIVE</h1>
+
+        <div class="accent-line" role="presentation"></div>
+
+        <p class="tagline">Be the person who actually knows what's going on.</p>
+
+        <p class="description">
+            MDK Archive produces deeply sourced documentaries on the questions most people wonder about but never have time to research &mdash; the stories with the context stripped out, the forces reshaping the modern world, the history behind the headlines. Rigorously fact-checked. Every source published publicly. Built for the curious.
+        </p>
+
+        <a class="cta-button" href="https://youtube.com/@MDKArchive" target="_blank" rel="noopener noreferrer">
+            Watch the Latest Episode
+        </a>
+
+        <nav class="social-links" aria-label="Social media">
+            <a href="https://youtube.com/@MDKArchive" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <span class="separator" aria-hidden="true">·</span>
+            <a href="https://tiktok.com/@mdkarchive" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <span class="separator" aria-hidden="true">·</span>
+            <a href="https://instagram.com/mdkarchive" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <span class="separator" aria-hidden="true">·</span>
+            <a href="https://x.com/MDKArchive" target="_blank" rel="noopener noreferrer">X</a>
+            <span class="separator" aria-hidden="true">·</span>
+            <a href="https://threads.net/@mdkarchive" target="_blank" rel="noopener noreferrer">Threads</a>
+        </nav>
+
+        <div class="sources-link">
+            <a href="/sources">Sources &amp; Citations</a>
+        </div>
+
+        <footer>
+            <a href="mailto:themdkarchive@gmail.com">themdkarchive@gmail.com</a><br>
+            &copy; 2026 MDK Archive. All rights reserved.
+        </footer>
+    </main>
+</body>
+</html>
