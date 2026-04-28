@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources & Citations — MDK Archive</title>
+    <meta name="description" content="Every claim in MDK Archive documentaries is sourced to primary documents, peer-reviewed scholarship, and credentialed institutions. Full citations available.">
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Sources & Citations — MDK Archive">
+    <meta property="og:description" content="Every claim in MDK Archive documentaries is sourced. Full citations published publicly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mdkarchive.com/sources">
+
+    <!-- Google Fonts: Playfair Display + Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           MDK ARCHIVE - SOURCES PAGE
+           Matches landing page visual system:
+           - Background: #0A0A0A
+           - Foreground: #F5F5F0
+           - Accent: #C8102E
+           - Headings: Playfair Display
+           - Body: Inter (better for long-form reading)
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0A0A0A;
+            color: #F5F5F0;
+            line-height: 1.65;
+            padding: 60px 20px 80px 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* ----- Header ----- */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .wordmark {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            margin-bottom: 25px;
+            line-height: 1;
+        }
+
+        .wordmark a {
+            color: #F5F5F0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .wordmark a:hover,
+        .wordmark a:focus {
+            color: #C8102E;
+            outline: none;
+        }
+
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background-color: #C8102E;
+            margin: 0 auto 35px auto;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            font-style: italic;
+            opacity: 0.85;
+            max-width: 640px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ----- Episode Index ----- */
+        .episode-index {
+            background-color: rgba(245, 245, 240, 0.04);
+            border-left: 3px solid #C8102E;
+            padding: 30px 35px;
+            margin: 50px 0 70px 0;
+        }
+
+        .episode-index h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            opacity: 0.9;
+        }
+
+        .episode-index ul {
+            list-style: none;
+        }
+
+        .episode-index li {
+            padding: 8px 0;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(245, 245, 240, 0.08);
+        }
+
+        .episode-index li:last-child {
+            border-bottom: none;
+        }
+
+        .episode-index a {
+            color: #F5F5F0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .episode-index a:hover,
+        .episode-index a:focus {
+            color: #C8102E;
+            outline: none;
+        }
+
+        .episode-index .coming-soon {
+            color: rgba(245, 245, 240, 0.4);
+            font-style: italic;
+        }
+
+        /* ----- Episode Section ----- */
+        .episode-section {
+            margin-bottom: 80px;
+        }
+
+        .episode-header {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #C8102E;
+            line-height: 1.2;
+        }
+
+        .episode-subtitle {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            opacity: 0.7;
+            margin-bottom: 40px;
+        }
+
+        /* ----- Section Headers ----- */
+        .section-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin: 50px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(245, 245, 240, 0.2);
+        }
+
+        .subsection-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 35px 0 18px 0;
+            color: #F5F5F0;
+            opacity: 0.95;
+        }
+
+        /* ----- Citations ----- */
+        .citation {
+            margin-bottom: 18px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            opacity: 0.92;
+        }
+
+        .citation .num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+            color: #C8102E;
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .citation a {
+            color: #F5F5F0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(200, 16, 46, 0.4);
+            word-break: break-word;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .citation a:hover,
+        .citation a:focus {
+            color: #C8102E;
+            border-bottom-color: #C8102E;
+            outline: none;
+        }
+
+        .citation em {
+            font-style: italic;
+        }
+
+        /* ----- Image/Video Credit Entries ----- */
+        .credit-entry {
+            margin-bottom: 22px;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            opacity: 0.92;
+        }
+
+        .credit-entry strong {
+            font-weight: 600;
+        }
+
+        .credit-entry a {
+            color: #F5F5F0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(200, 16, 46, 0.4);
+            word-break: break-word;
+            transition: border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .credit-entry a:hover,
+        .credit-entry a:focus {
+            color: #C8102E;
+            border-bottom-color: #C8102E;
+            outline: none;
+        }
+
+        .credit-entry em {
+            font-style: italic;
+            opacity: 0.85;
+        }
+
+        /* ----- Section intro paragraphs ----- */
+        .section-intro {
+            font-style: italic;
+            opacity: 0.85;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ----- Statement on Sourcing ----- */
+        .statement-block {
+            background-color: rgba(200, 16, 46, 0.06);
+            border-left: 3px solid #C8102E;
+            padding: 28px 32px;
+            margin: 40px 0 50px 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .statement-block p {
+            margin-bottom: 14px;
+        }
+
+        .statement-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .statement-block strong {
+            font-weight: 600;
+        }
+
+        /* ----- ShareAlike Note ----- */
+        .legal-note {
+            background-color: rgba(245, 245, 240, 0.04);
+            border-left: 3px solid rgba(245, 245, 240, 0.3);
+            padding: 24px 30px;
+            margin: 35px 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.85;
+        }
+
+        .legal-note h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        /* ----- Notes Block ----- */
+        .notes-block {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(245, 245, 240, 0.2);
+        }
+
+        .notes-block h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .notes-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .notes-block li {
+            padding: 8px 0 8px 20px;
+            position: relative;
+            font-size: 0.92rem;
+            line-height: 1.65;
+            opacity: 0.85;
+        }
+
+        .notes-block li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: #C8102E;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .last-updated {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 0.85rem;
+            opacity: 0.55;
+        }
+
+        /* ----- Footer ----- */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(245, 245, 240, 0.15);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: #F5F5F0;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(245, 245, 240, 0.3);
+            padding-bottom: 2px;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        footer a:hover,
+        footer a:focus {
+            color: #C8102E;
+            border-bottom-color: #C8102E;
+            outline: none;
+        }
+
+        /* ----- Mobile adjustments ----- */
+        @media (max-width: 600px) {
+            body {
+                padding: 40px 16px 60px 16px;
+            }
+
+            .episode-index {
+                padding: 22px 20px;
+            }
+
+            .statement-block,
+            .legal-note {
+                padding: 20px 18px;
+            }
+
+            .citation {
+                padding-left: 28px;
+            }
+        }
+
+        /* ----- Reduce motion ----- */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- ========== HEADER ========== -->
+        <header>
+            <h1 class="wordmark"><a href="/">MDK ARCHIVE</a></h1>
+            <div class="accent-line" role="presentation"></div>
+            <div class="page-title">Sources &amp; Citations</div>
+            <p class="intro">
+                Every factual claim in MDK Archive documentaries is sourced to primary documents, peer-reviewed scholarship, authoritative reference works, major news organizations, or credentialed research institutions. No Wikipedia. No shortcuts.
+            </p>
+        </header>
+
+        <!-- ========== EPISODE INDEX ========== -->
+        <nav class="episode-index" aria-label="Episode index">
+            <h2>The Iran Conflict — Episode Index</h2>
+            <ul>
+                <li><a href="#episode-1">Episode 1 — The First Betrayal</a></li>
+                <li><span class="coming-soon">Episode 2 — Coming soon</span></li>
+                <li><span class="coming-soon">Episode 3 — Coming soon</span></li>
+                <li><span class="coming-soon">Episode 4 — Coming soon</span></li>
+                <li><span class="coming-soon">Episode 5 — Coming soon</span></li>
+            </ul>
+        </nav>
+
+        <!-- ========================================
+             EPISODE 1 — THE FIRST BETRAYAL
+             ======================================== -->
+        <section class="episode-section" id="episode-1">
+
+            <h2 class="episode-header">Episode 1 &mdash; The First Betrayal</h2>
+            <p class="episode-subtitle">From the series <em>The Iran Conflict: How Did We Get Here?</em></p>
+
+            <p class="section-intro">
+                <strong>Citation format:</strong> Chicago Manual of Style (Notes-Bibliography), the standard format for historical and documentary scholarship.<br>
+                <strong>Sourcing standard:</strong> Primary documents, peer-reviewed academic works, authoritative reference works, major news organizations, and credentialed research institutions. No Wikipedia.
+            </p>
+
+            <!-- Statement on Sourcing -->
+            <div class="statement-block">
+                <p><strong>Statement on Sourcing.</strong> This documentary is independently produced and rigorously fact-checked. Every factual claim in this episode has been verified against a primary document, peer-reviewed academic work, authoritative reference, major news organization, or credentialed research institution.</p>
+                <p>If you believe any claim in this video is inaccurate, please contact us with the specific claim and your source. We take factual accuracy seriously and will issue public corrections when warranted.</p>
+            </div>
+
+            <!-- ===== Primary Documents ===== -->
+            <h3 class="section-heading">Primary Documents &amp; Government Archives</h3>
+
+            <div class="citation"><span class="num">[1]</span> United Kingdom Parliament. "Persia (Anglo-Iranian Oil Company)." <em>Hansard</em>, House of Commons Debates, vol. 487, cols. 989–1013, 1 May 1951. <a href="https://api.parliament.uk/historic-hansard/commons/1951/may/01/persia-anglo-iranian-oil-company" target="_blank" rel="noopener noreferrer">https://api.parliament.uk/historic-hansard/commons/1951/may/01/persia-anglo-iranian-oil-company</a></div>
+
+            <div class="citation"><span class="num">[2]</span> Hurewitz, J. C. <em>Diplomacy in the Near and Middle East: A Documentary Record, 1535–1914</em>. Vol. I. New York: Octagon Books, 1972, pp. 482–484. ISBN 978-0374940768.</div>
+
+            <div class="citation"><span class="num">[3]</span> United States Department of State, Office of the Historian. <em>Foreign Relations of the United States, 1969–1976, Volume E–4, Documents on Iran and Iraq, 1969–1972</em>, Document 180. <a href="https://history.state.gov/historicaldocuments/frus1969-76ve04/d180" target="_blank" rel="noopener noreferrer">https://history.state.gov/historicaldocuments/frus1969-76ve04/d180</a></div>
+
+            <div class="citation"><span class="num">[4]</span> United States Department of State, Bureau of Intelligence and Research, Office of the Geographer. <em>International Boundary Study No. 25: Iran–USSR Boundary</em>, 28 February 1978. <a href="https://library.law.fsu.edu/Digital-Collections/LimitsinSeas/pdf/ibs025.pdf" target="_blank" rel="noopener noreferrer">https://library.law.fsu.edu/Digital-Collections/LimitsinSeas/pdf/ibs025.pdf</a></div>
+
+            <div class="citation"><span class="num">[5]</span> United States Department of State, Office of the Historian. "Foreign Policy under President Eisenhower." Short History of the Department of State. <a href="https://history.state.gov/departmenthistory/short-history/eisenhower" target="_blank" rel="noopener noreferrer">https://history.state.gov/departmenthistory/short-history/eisenhower</a></div>
+
+            <div class="citation"><span class="num">[6]</span> National Security Archive, George Washington University. "CIA Confirms Role in 1953 Iran Coup." Edited by Malcolm Byrne. <em>Electronic Briefing Book No. 435</em>, 19 August 2013. <a href="https://nsarchive2.gwu.edu/NSAEBB/NSAEBB435/" target="_blank" rel="noopener noreferrer">https://nsarchive2.gwu.edu/NSAEBB/NSAEBB435/</a></div>
+
+            <div class="citation"><span class="num">[7]</span> Robarge, David S. "All the Shah's Men: An American Coup and the Roots of Middle East Terror" (review essay). <em>Studies in Intelligence</em> 48, no. 2 (2004). Central Intelligence Agency. <a href="https://www.cia.gov/resources/csi/static/all-the-shahs-men.pdf" target="_blank" rel="noopener noreferrer">https://www.cia.gov/resources/csi/static/all-the-shahs-men.pdf</a></div>
+
+            <div class="citation"><span class="num">[8]</span> United States Department of State, Office of the Historian. <em>Foreign Relations of the United States, 1952–1954, Iran, 1951–1954</em>, Volume X. Washington: U.S. Government Printing Office, 1989; released June 2017. <a href="https://history.state.gov/historicaldocuments/frus1951-54Iran" target="_blank" rel="noopener noreferrer">https://history.state.gov/historicaldocuments/frus1951-54Iran</a></div>
+
+            <div class="citation"><span class="num">[9]</span> United States Department of State, Office of the Historian. <em>Foreign Relations of the United States, 1969–1976, Volume 27, Iran; Iraq, 1973–1976</em>, Document 184. <a href="https://history.state.gov/historicaldocuments/frus1969-76v27/d184" target="_blank" rel="noopener noreferrer">https://history.state.gov/historicaldocuments/frus1969-76v27/d184</a></div>
+
+            <div class="citation"><span class="num">[10]</span> Immigration and Refugee Board of Canada. "Information on SAVAK [IRN7544]." Document #1182349, 1 January 1991. <a href="https://www.ecoi.net/en/document/1182349.html" target="_blank" rel="noopener noreferrer">https://www.ecoi.net/en/document/1182349.html</a></div>
+
+            <div class="citation"><span class="num">[11]</span> United States Department of State, Office of the Historian. <em>Foreign Relations of the United States, 1969–1976, Volume 27, Iran; Iraq, 1973–1976</em>, Document 142. <a href="https://history.state.gov/historicaldocuments/frus1969-76v27/d142" target="_blank" rel="noopener noreferrer">https://history.state.gov/historicaldocuments/frus1969-76v27/d142</a></div>
+
+            <div class="citation"><span class="num">[12]</span> Carter, Jimmy. "Toasts of the President and the Shah at a State Dinner in Tehran, Iran," 31 December 1977. In <em>Public Papers of the Presidents of the United States: Jimmy Carter</em>. Archived by The American Presidency Project, UC Santa Barbara (Woolley &amp; Peters, eds.). <a href="https://www.presidency.ucsb.edu/documents/toasts-the-president-and-the-shah-state-dinner-tehran-iran" target="_blank" rel="noopener noreferrer">https://www.presidency.ucsb.edu/documents/toasts-the-president-and-the-shah-state-dinner-tehran-iran</a></div>
+
+
+            <!-- ===== Peer-Reviewed Academic Works ===== -->
+            <h3 class="section-heading">Peer-Reviewed Academic Works &amp; Books</h3>
+
+            <div class="citation"><span class="num">[13]</span> Bamberg, J. H. <em>The History of the British Petroleum Company, Vol. 2: The Anglo-Iranian Years, 1928–1954</em>. Cambridge: Cambridge University Press, 1994. ISBN 978-0521259507.</div>
+
+            <div class="citation"><span class="num">[14]</span> Kinzer, Stephen. <em>All the Shah's Men: An American Coup and the Roots of Middle East Terror</em>. Hoboken, NJ: John Wiley &amp; Sons, 2003. ISBN 978-0471678786.</div>
+
+            <div class="citation"><span class="num">[15]</span> Yergin, Daniel. <em>The Prize: The Epic Quest for Oil, Money, and Power</em>. New York: Simon &amp; Schuster, 1991. ISBN 978-0671502485.</div>
+
+            <div class="citation"><span class="num">[16]</span> Abrahamian, Ervand. <em>Iran Between Two Revolutions</em>. Princeton, NJ: Princeton University Press, 1982. ISBN 978-0691101347. <a href="https://press.princeton.edu/books/paperback/9780691101347/iran-between-two-revolutions" target="_blank" rel="noopener noreferrer">https://press.princeton.edu/books/paperback/9780691101347/iran-between-two-revolutions</a></div>
+
+            <div class="citation"><span class="num">[17]</span> Galpern, Steven G. <em>Money, Oil, and Empire in the Middle East: Sterling and Postwar Imperialism, 1944–1971</em>. Cambridge: Cambridge University Press, 2009. ISBN 978-0521767903. <a href="https://assets.cambridge.org/97805217/67903/frontmatter/9780521767903_frontmatter.pdf" target="_blank" rel="noopener noreferrer">https://assets.cambridge.org/97805217/67903/frontmatter/9780521767903_frontmatter.pdf</a></div>
+
+            <div class="citation"><span class="num">[18]</span> Clawson, Patrick, and Cyrus Sassanpour. "Adjustment to a Foreign Exchange Shock: Iran, 1951–1953." <em>International Journal of Middle East Studies</em> 19, no. 1 (February 1987): 1–22. Cambridge University Press. DOI: 10.1017/S0020743800031639. <a href="https://www.cambridge.org/core/journals/international-journal-of-middle-east-studies/article/abs/adjustment-to-a-foreign-exchange-shock-iran-19511953/6A74D943627801D8FE92DF0047B7F45C" target="_blank" rel="noopener noreferrer">https://www.cambridge.org/core/journals/international-journal-of-middle-east-studies/article/abs/adjustment-to-a-foreign-exchange-shock-iran-19511953/6A74D943627801D8FE92DF0047B7F45C</a></div>
+
+            <div class="citation"><span class="num">[19]</span> Özkan, Fulya. "Turkish foreign policy during the Iranian oil crisis, 1951–1953." <em>New Perspectives on Turkey</em> 72 (May 2025): 51–69. Cambridge University Press. <a href="https://www.cambridge.org/core/journals/new-perspectives-on-turkey/article/turkish-foreign-policy-during-the-iranian-oil-crisis-19511953/4F8D0A9507BF0EFD84B89EC07CF3C2C6" target="_blank" rel="noopener noreferrer">https://www.cambridge.org/core/journals/new-perspectives-on-turkey/article/turkish-foreign-policy-during-the-iranian-oil-crisis-19511953/4F8D0A9507BF0EFD84B89EC07CF3C2C6</a></div>
+
+            <div class="citation"><span class="num">[20]</span> Rahnema, Ali. <em>Behind the 1953 Coup in Iran: Thugs, Turncoats, Soldiers, and Spooks</em>. Cambridge: Cambridge University Press, 2015. ISBN 978-1-107-07606-8.</div>
+
+            <div class="citation"><span class="num">[21]</span> Uygur, Hakkı. "Iran's Intelligence Apparatus from Past to Present: Institutional Process and Political Handicaps." <em>Insight Turkey</em>, SETA Foundation for Political, Economic, and Social Research. <a href="https://www.insightturkey.com/articles/irans-intelligence-apparatus-from-past-to-present-institutional-process-and-political-handicaps" target="_blank" rel="noopener noreferrer">https://www.insightturkey.com/articles/irans-intelligence-apparatus-from-past-to-present-institutional-process-and-political-handicaps</a></div>
+
+            <div class="citation"><span class="num">[22]</span> Meisels, Eitan. "The Shah's 'Fatherly Eye': Iranian Espionage in the United States." Senior thesis, Columbia University Department of History. <a href="https://sites.asit.columbia.edu/historydept/wp-content/uploads/sites/29/2020/05/Meisels-Eitan_SNR-Thesis_web.pdf" target="_blank" rel="noopener noreferrer">https://sites.asit.columbia.edu/historydept/wp-content/uploads/sites/29/2020/05/Meisels-Eitan_SNR-Thesis_web.pdf</a></div>
+
+            <div class="citation"><span class="num">[23]</span> Esmaili, Tala. "Lessons from the Suffrage Movement in Iran." <em>Yale Law Journal Forum</em> (2020). Yale Law School. <a href="https://yalelawjournal.org/forum/lessons-from-the-suffrage-movement-in-iran" target="_blank" rel="noopener noreferrer">https://yalelawjournal.org/forum/lessons-from-the-suffrage-movement-in-iran</a></div>
+
+            <div class="citation"><span class="num">[24]</span> "FEMINIST MOVEMENTS iii. IN THE PAHLAVI PERIOD." <em>Encyclopaedia Iranica</em>. Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/feminist-movements-iii/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/feminist-movements-iii/</a></div>
+
+            <div class="citation"><span class="num">[25]</span> "CLASS SYSTEM vi. Classes in the Pahlavi Period." <em>Encyclopaedia Iranica</em>. Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/class-system-vi/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/class-system-vi/</a></div>
+
+            <div class="citation"><span class="num">[26]</span> "ARMY vi. Pahlavi Period." <em>Encyclopaedia Iranica</em>. Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/army-vi/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/army-vi/</a></div>
+
+            <div class="citation"><span class="num">[27]</span> Narayanan, Priya. <em>Dictators</em>. Excerpt published in <em>The Print</em>, March 2026. <a href="https://theprint.in/pageturner/excerpt/khomeini-secular-leftist-nationalist-allies-iran-islamic-republic/2874094/" target="_blank" rel="noopener noreferrer">https://theprint.in/pageturner/excerpt/khomeini-secular-leftist-nationalist-allies-iran-islamic-republic/2874094/</a></div>
+
+
+            <!-- ===== Authoritative Reference Works ===== -->
+            <h3 class="section-heading">Authoritative Reference Works</h3>
+
+            <div class="citation"><span class="num">[28]</span> <em>Encyclopaedia Iranica</em>. "Anglo-Persian Oil Company." Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/anglo-persian-oil-company/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/anglo-persian-oil-company/</a></div>
+
+            <div class="citation"><span class="num">[29]</span> <em>Encyclopaedia Iranica</em>. "D'Arcy, William Knox." Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/darcy-william-knox/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/darcy-william-knox/</a></div>
+
+            <div class="citation"><span class="num">[30]</span> <em>Encyclopaedia Iranica</em>. "Oil Agreements in Iran." Center for Iranian Studies, Columbia University. <a href="https://www.iranicaonline.org/articles/oil-agreements-in-iran/" target="_blank" rel="noopener noreferrer">https://www.iranicaonline.org/articles/oil-agreements-in-iran/</a></div>
+
+            <div class="citation"><span class="num">[31]</span> <em>Encyclopaedia Britannica</em>. "BP PLC." <a href="https://www.britannica.com/money/BP-PLC" target="_blank" rel="noopener noreferrer">https://www.britannica.com/money/BP-PLC</a></div>
+
+            <div class="citation"><span class="num">[32]</span> <em>Encyclopaedia Britannica</em>. "United Kingdom: Britain since 1945." <a href="https://www.britannica.com/place/United-Kingdom/Britain-since-1945" target="_blank" rel="noopener noreferrer">https://www.britannica.com/place/United-Kingdom/Britain-since-1945</a></div>
+
+            <div class="citation"><span class="num">[33]</span> <em>Encyclopedia.com</em> (Gale). "D'Arcy Concession (1901)." <a href="https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/darcy-concession-1901" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/darcy-concession-1901</a></div>
+
+            <div class="citation"><span class="num">[34]</span> <em>Encyclopedia of Islam and the Muslim World</em> (via Encyclopedia.com / Gale). "Mosaddeq, Mohammad (1882–1967)." <a href="https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/mosaddeq-mohammad-1882-1967" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/mosaddeq-mohammad-1882-1967</a></div>
+
+            <div class="citation"><span class="num">[35]</span> EBSCO Research Starters. "Mohammad Mossadegh." EBSCO Information Services. <a href="https://www.ebsco.com/research-starters/history/mohammad-mossadegh" target="_blank" rel="noopener noreferrer">https://www.ebsco.com/research-starters/history/mohammad-mossadegh</a></div>
+
+            <div class="citation"><span class="num">[36]</span> <em>Encyclopaedia Britannica</em>. "Mohammad Mosaddegh." <a href="https://www.britannica.com/biography/Mohammad-Mosaddegh" target="_blank" rel="noopener noreferrer">https://www.britannica.com/biography/Mohammad-Mosaddegh</a></div>
+
+            <div class="citation"><span class="num">[37]</span> <em>Encyclopaedia Britannica</em>. "Nationalization." <a href="https://www.britannica.com/money/nationalization" target="_blank" rel="noopener noreferrer">https://www.britannica.com/money/nationalization</a></div>
+
+            <div class="citation"><span class="num">[38]</span> <em>Encyclopaedia Britannica</em>. "1953 coup in Iran." <a href="https://www.britannica.com/event/1953-coup-in-Iran" target="_blank" rel="noopener noreferrer">https://www.britannica.com/event/1953-coup-in-Iran</a></div>
+
+            <div class="citation"><span class="num">[39]</span> <em>Encyclopaedia Britannica</em>. "Domino theory." <a href="https://www.britannica.com/topic/domino-theory" target="_blank" rel="noopener noreferrer">https://www.britannica.com/topic/domino-theory</a></div>
+
+            <div class="citation"><span class="num">[40]</span> <em>Encyclopaedia Britannica</em>. "Allen W. Dulles." <a href="https://www.britannica.com/biography/Allen-W-Dulles" target="_blank" rel="noopener noreferrer">https://www.britannica.com/biography/Allen-W-Dulles</a></div>
+
+            <div class="citation"><span class="num">[41]</span> <em>Encyclopaedia Britannica</em>. "Mohammad Reza Shah Pahlavi." <a href="https://www.britannica.com/biography/Mohammad-Reza-Shah-Pahlavi" target="_blank" rel="noopener noreferrer">https://www.britannica.com/biography/Mohammad-Reza-Shah-Pahlavi</a></div>
+
+            <div class="citation"><span class="num">[42]</span> <em>Encyclopaedia Britannica</em>. "Pahlavi dynasty." <a href="https://www.britannica.com/topic/Pahlavi-dynasty" target="_blank" rel="noopener noreferrer">https://www.britannica.com/topic/Pahlavi-dynasty</a></div>
+
+            <div class="citation"><span class="num">[43]</span> PBS (Public Broadcasting Service). "Global Connections: Glossary — SAVAK." WGBH Educational Foundation. <a href="https://www.pbs.org/wgbh/globalconnections/mideast/glossary/term/savak.html" target="_blank" rel="noopener noreferrer">https://www.pbs.org/wgbh/globalconnections/mideast/glossary/term/savak.html</a></div>
+
+            <div class="citation"><span class="num">[44]</span> <em>Encyclopedia of Torture and Executions</em> (via Encyclopedia.com / Gale). "Human Rights Abuses in Shahist Iran." <a href="https://www.encyclopedia.com/history/legal-and-political-magazines/human-rights-abuses-shahist-iran" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/history/legal-and-political-magazines/human-rights-abuses-shahist-iran</a></div>
+
+            <div class="citation"><span class="num">[45]</span> <em>Encyclopedia of Espionage, Intelligence, and Security</em> (via Encyclopedia.com / Gale). "Iran, Intelligence and Security." <a href="https://www.encyclopedia.com/politics/encyclopedias-almanacs-transcripts-and-maps/iran-intelligence-and-security" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/politics/encyclopedias-almanacs-transcripts-and-maps/iran-intelligence-and-security</a></div>
+
+            <div class="citation"><span class="num">[46]</span> <em>Encyclopedia of the Modern Middle East and North Africa</em> (via Encyclopedia.com / Gale). "White Revolution (1961–1963)." <a href="https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/white-revolution-1961-1963" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/white-revolution-1961-1963</a></div>
+
+            <div class="citation"><span class="num">[47]</span> <em>Encyclopaedia Britannica</em>. "White Revolution (Iran)." <a href="https://www.britannica.com/topic/White-Revolution" target="_blank" rel="noopener noreferrer">https://www.britannica.com/topic/White-Revolution</a></div>
+
+            <div class="citation"><span class="num">[48]</span> <em>Encyclopaedia Britannica</em>. "Iran — The White Revolution." <a href="https://www.britannica.com/place/Iran/The-White-Revolution" target="_blank" rel="noopener noreferrer">https://www.britannica.com/place/Iran/The-White-Revolution</a></div>
+
+            <div class="citation"><span class="num">[49]</span> <em>Encyclopaedia Britannica</em>. "Iranian Revolution." <a href="https://www.britannica.com/event/Iranian-Revolution" target="_blank" rel="noopener noreferrer">https://www.britannica.com/event/Iranian-Revolution</a></div>
+
+            <div class="citation"><span class="num">[50]</span> <em>Encyclopaedia Britannica</em>. "Velāyat-e faqīh." <a href="https://www.britannica.com/topic/velayat-e-faqih" target="_blank" rel="noopener noreferrer">https://www.britannica.com/topic/velayat-e-faqih</a></div>
+
+            <div class="citation"><span class="num">[51]</span> <em>Collins English Dictionary — Complete &amp; Unabridged</em>, 2012 Digital Edition (via Dictionary.com). "Ayatollah." <a href="https://www.dictionary.com/browse/ayatollah" target="_blank" rel="noopener noreferrer">https://www.dictionary.com/browse/ayatollah</a></div>
+
+            <div class="citation"><span class="num">[52]</span> <em>Encyclopedia of Religion</em> (via Encyclopedia.com / Gale). "Velayat-e Faqih." <a href="https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/velayat-e-faqih" target="_blank" rel="noopener noreferrer">https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/velayat-e-faqih</a></div>
+
+            <div class="citation"><span class="num">[53]</span> "Jimmy Carter Toasts the Shah | 31 December 1977." <em>Virtues &amp; Vices Reader</em> (James Madison's Montpelier / James Madison University Center for the Constitution). <a href="https://vandvreader.org/jimmy-carter-toasts-the-shah-31-december-1977/" target="_blank" rel="noopener noreferrer">https://vandvreader.org/jimmy-carter-toasts-the-shah-31-december-1977/</a></div>
+
+
+            <!-- ===== Major News Organizations ===== -->
+            <h3 class="section-heading">Major News Organizations</h3>
+
+            <div class="citation"><span class="num">[54]</span> Kinzer, Stephen. "BP and Iran: The Forgotten History." <em>CBS News</em>, 30 June 2010. <a href="https://www.cbsnews.com/news/bp-and-iran-the-forgotten-history/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/bp-and-iran-the-forgotten-history/</a></div>
+
+            <div class="citation"><span class="num">[55]</span> de Bellaigue, Christopher. "The Tragedy of 1953." <em>Harper's Magazine</em>, July 2013. <a href="https://harpers.org/archive/2013/07/the-tragedy-of-1953/" target="_blank" rel="noopener noreferrer">https://harpers.org/archive/2013/07/the-tragedy-of-1953/</a></div>
+
+            <div class="citation"><span class="num">[56]</span> Radio Free Europe / Radio Liberty. "Aftershocks Of Iran's 1953 Coup Still Felt Around The World, 60 Years Later." 19 August 2013. <a href="https://www.rferl.org/a/iran-coup-mossadegh-cia-60th-anniversary/25076552.html" target="_blank" rel="noopener noreferrer">https://www.rferl.org/a/iran-coup-mossadegh-cia-60th-anniversary/25076552.html</a></div>
+
+            <div class="citation"><span class="num">[57]</span> Abdelfatah, Rund, and Ramtin Arablouei. "How The CIA Overthrew Iran's Democracy In 4 Days." <em>Throughline</em>, National Public Radio (NPR), 31 January 2019. <a href="https://www.npr.org/2019/01/31/690363402/how-the-cia-overthrew-irans-democracy-in-four-days" target="_blank" rel="noopener noreferrer">https://www.npr.org/2019/01/31/690363402/how-the-cia-overthrew-irans-democracy-in-four-days</a></div>
+
+            <div class="citation"><span class="num">[58]</span> Starr, Barbara, and Alan Duke. "In declassified document, CIA acknowledges role in 1953 Iran coup." <em>CNN Politics</em>, 19 August 2013. <a href="https://www.cnn.com/2013/08/19/politics/cia-iran-1953-coup" target="_blank" rel="noopener noreferrer">https://www.cnn.com/2013/08/19/politics/cia-iran-1953-coup</a></div>
+
+            <div class="citation"><span class="num">[59]</span> Kamath, Ullekh N. P. "Kim Roosevelt, architect of 1953 Iran coup, had warned US about regime-change interventions." <em>Open Magazine</em>, 2025. <a href="https://openthemagazine.com/world/kim-roosevelt-architect-of-1953-iran-coup-had-warned-usabout-regime-range-interventions" target="_blank" rel="noopener noreferrer">https://openthemagazine.com/world/kim-roosevelt-architect-of-1953-iran-coup-had-warned-usabout-regime-range-interventions</a></div>
+
+            <div class="citation"><span class="num">[60]</span> Bob, Yonah Jeremy. "Mossad was part of Iran's mosaic pre-ayatollahs, what might it be there after them? — analysis." <em>The Jerusalem Post</em>, 26 January 2026. <a href="https://www.jpost.com/middle-east/iran-news/article-884624" target="_blank" rel="noopener noreferrer">https://www.jpost.com/middle-east/iran-news/article-884624</a></div>
+
+            <div class="citation"><span class="num">[61]</span> "World: SAVAK: Like the CIA." <em>TIME Magazine</em>, 19 February 1979. <a href="https://time.com/archive/6846098/world-savak-like-the-cia/" target="_blank" rel="noopener noreferrer">https://time.com/archive/6846098/world-savak-like-the-cia/</a></div>
+
+            <div class="citation"><span class="num">[62]</span> "Life Under The Shah." <em>The Harvard Crimson</em>, 6 December 1979. <a href="https://www.thecrimson.com/article/1979/12/6/life-under-the-shah-pit-was/" target="_blank" rel="noopener noreferrer">https://www.thecrimson.com/article/1979/12/6/life-under-the-shah-pit-was/</a></div>
+
+            <div class="citation"><span class="num">[63]</span> Ganguly, Meenakshi / Associated Press. "Egypt and Iran: People's revolutions play out differently." <em>NBC News</em>, 12 February 2011. <a href="https://www.nbcnews.com/id/wbna41552659" target="_blank" rel="noopener noreferrer">https://www.nbcnews.com/id/wbna41552659</a></div>
+
+            <div class="citation"><span class="num">[64]</span> "What Led to the 1979 Iranian Revolution?" <em>History.com</em> (A&amp;E Networks / The HISTORY Channel). <a href="https://www.history.com/articles/1979-iranian-revolution-causes" target="_blank" rel="noopener noreferrer">https://www.history.com/articles/1979-iranian-revolution-causes</a></div>
+
+
+            <!-- ===== Research Institutes & Think Tanks ===== -->
+            <h3 class="section-heading">Research Institutes &amp; Think Tanks</h3>
+
+            <div class="citation"><span class="num">[65]</span> Association for Diplomatic Studies &amp; Training (ADST). "The Coup Against Iran's Mohammad Mossadegh." A Moment in U.S. Diplomatic History. Oral history collection, originally interviewed 1988–1994. <a href="https://adst.org/2015/07/the-coup-against-irans-mohammad-mossadegh/" target="_blank" rel="noopener noreferrer">https://adst.org/2015/07/the-coup-against-irans-mohammad-mossadegh/</a></div>
+
+            <div class="citation"><span class="num">[66]</span> Center for International Maritime Security (CIMSEC). "Coal to Oil and the Great Green Fleet." 7 May 2013. <a href="https://cimsec.org/coal-to-oil-and-the-great-green-fleet/" target="_blank" rel="noopener noreferrer">https://cimsec.org/coal-to-oil-and-the-great-green-fleet/</a></div>
+
+            <div class="citation"><span class="num">[67]</span> Council on Foreign Relations. "Support for the Overthrow of Iranian Prime Minister Mohammad Mosaddeq." In <em>The 10 Best and 10 Worst U.S. Foreign Policy Decisions: A Survey of Historians</em>. <a href="https://www.cfr.org/ten-best-ten-worst-us-foreign-policy-decisions/support-for-the-overthrow-of-iranian-prime-minister-mohammad-mosaddegh/" target="_blank" rel="noopener noreferrer">https://www.cfr.org/ten-best-ten-worst-us-foreign-policy-decisions/support-for-the-overthrow-of-iranian-prime-minister-mohammad-mosaddegh/</a></div>
+
+            <div class="citation"><span class="num">[68]</span> Seven Pillars Institute. "Nationalisation of the Anglo-Iranian Oil Company in 1951: Britain vs. Iran." <em>Moral Cents</em>, Vol. 2, Issue 2, Summer/Fall 2013. <a href="https://sevenpillarsinstitute.org/articles/nationalisation-anglo-iranian-oil-company-1951-britain-vs-iran-2/" target="_blank" rel="noopener noreferrer">https://sevenpillarsinstitute.org/articles/nationalisation-anglo-iranian-oil-company-1951-britain-vs-iran-2/</a></div>
+
+            <div class="citation"><span class="num">[69]</span> Roosevelt Institute (Roosevelt Stichting, Middelburg, Netherlands). "Operation Ajax: The 1953 Coup in Iran." <em>From the Vaults</em>. <a href="https://www.roosevelt.nl/en/library/from-the-vaults/operation-ajax-the-1953-coup-in-iran/" target="_blank" rel="noopener noreferrer">https://www.roosevelt.nl/en/library/from-the-vaults/operation-ajax-the-1953-coup-in-iran/</a></div>
+
+            <div class="citation"><span class="num">[70]</span> Lindsay, James M., Mary Dudziak, and Christopher Nichols. "America at 250: The Best and Worst U.S. Foreign Policy Decisions." <em>The President's Inbox</em>, Council on Foreign Relations podcast, January 2026. <a href="https://www.cfr.org/podcasts/presidents-inbox/america-250-best-worst-us-foreign-policy-decisions" target="_blank" rel="noopener noreferrer">https://www.cfr.org/podcasts/presidents-inbox/america-250-best-worst-us-foreign-policy-decisions</a></div>
+
+            <div class="citation"><span class="num">[71]</span> United Against Nuclear Iran (UANI). "Historical Background and Structure." <a href="https://www.unitedagainstnucleariran.com/historical-background-and-structure" target="_blank" rel="noopener noreferrer">https://www.unitedagainstnucleariran.com/historical-background-and-structure</a></div>
+
+            <div class="citation"><span class="num">[72]</span> Foundation for Iranian Studies. "Women's milestones: pre-revolution." <a href="https://fis-iran.org/women-center/pre-revolution-milestones/" target="_blank" rel="noopener noreferrer">https://fis-iran.org/women-center/pre-revolution-milestones/</a></div>
+
+            <div class="citation"><span class="num">[73]</span> "What Is Velayat-e Faqih?" <em>Tony Blair Institute for Global Change</em>, 20 March 2019. <a href="https://institute.global/insights/geopolitics-and-security/what-velayat-e-faqih" target="_blank" rel="noopener noreferrer">https://institute.global/insights/geopolitics-and-security/what-velayat-e-faqih</a></div>
+
+            <div class="citation"><span class="num">[74]</span> "How Khomeini betrayed the democratic promise of the Iranian revolution." <em>Democracy Digest</em>, February 2019. <a href="https://www.demdigest.org/is-irans-islamic-republic-fraying-or-nowhere-near-collapse/" target="_blank" rel="noopener noreferrer">https://www.demdigest.org/is-irans-islamic-republic-fraying-or-nowhere-near-collapse/</a></div>
+
+            <div class="citation"><span class="num">[75]</span> "Ideology and Iran's Revolution: How 1979 Changed the World." <em>Tony Blair Institute for Global Change</em>, 11 February 2019. <a href="https://institute.global/insights/geopolitics-and-security/ideology-and-irans-revolution-how-1979-changed-world" target="_blank" rel="noopener noreferrer">https://institute.global/insights/geopolitics-and-security/ideology-and-irans-revolution-how-1979-changed-world</a></div>
+
+            <div class="citation"><span class="num">[76]</span> Maloney, Suzanne. "1979: Iran and America." <em>Brookings Institution</em>, 24 January 2019. <a href="https://www.brookings.edu/articles/1979-iran-and-america/" target="_blank" rel="noopener noreferrer">https://www.brookings.edu/articles/1979-iran-and-america/</a></div>
+
+            <div class="citation"><span class="num">[77]</span> "The Iranian Revolution (1977-1979)." <em>International Center on Nonviolent Conflict</em> (ICNC). <a href="https://www.nonviolent-conflict.org/iranian-revolution-1977-1979/" target="_blank" rel="noopener noreferrer">https://www.nonviolent-conflict.org/iranian-revolution-1977-1979/</a></div>
+
+
+            <!-- ===== Specialized Publications & Educational Media ===== -->
+            <h3 class="section-heading">Specialized Publications &amp; Educational Media</h3>
+
+            <div class="citation"><span class="num">[78]</span> Cavendish, Richard. "The Iranian Oil Fields Are Nationalised." <em>History Today</em>, Vol. 51, Issue 5, May 2001. <a href="https://www.historytoday.com/archive/iranian-oil-fields-are-nationalised" target="_blank" rel="noopener noreferrer">https://www.historytoday.com/archive/iranian-oil-fields-are-nationalised</a></div>
+
+            <div class="citation"><span class="num">[79]</span> "SAVAK and the Mechanisms of Authoritarian Consolidation in Pahlavi Iran, 1957–1979." <em>Explaining History Podcast</em>, 3 September 2025. <a href="https://explaininghistory.org/2025/09/03/savak-and-the-mechanisms-of-authoritarian-consolidation-in-pahlavi-iran-1957-1979/" target="_blank" rel="noopener noreferrer">https://explaininghistory.org/2025/09/03/savak-and-the-mechanisms-of-authoritarian-consolidation-in-pahlavi-iran-1957-1979/</a></div>
+
+            <div class="citation"><span class="num">[80]</span> Kaplan, Carl. "Bad Intelligence." <em>New Internationalist</em>, September 1980. <a href="https://newint.org/features/1980/09/01/western" target="_blank" rel="noopener noreferrer">https://newint.org/features/1980/09/01/western</a></div>
+
+            <div class="citation"><span class="num">[81]</span> "The White Revolution: Modernization, Reform, and Resistance." <em>Explaining History Podcast</em>, 31 August 2025. <a href="https://explaininghistory.org/2025/08/31/the-white-revolution-modernization-reform-and-resistance/" target="_blank" rel="noopener noreferrer">https://explaininghistory.org/2025/08/31/the-white-revolution-modernization-reform-and-resistance/</a></div>
+
+            <div class="citation"><span class="num">[82]</span> "The White Revolution: Modernization under Mohammad Reza Pahlavi from 1963–1979." <em>Iranian Knowledge</em>, 6 April 2023. <a href="https://iranianknowledge.com/2023/04/the-white-revolution-modernization-under-mohammad-reza-pahlavi-from-1963-1979/" target="_blank" rel="noopener noreferrer">https://iranianknowledge.com/2023/04/the-white-revolution-modernization-under-mohammad-reza-pahlavi-from-1963-1979/</a></div>
+
+            <div class="citation"><span class="num">[83]</span> Kuhn, Anthony. "How the Shah Entangled America." <em>The National Interest</em>, Center for the National Interest. <a href="https://nationalinterest.org/feature/how-the-shah-entangled-america-8821" target="_blank" rel="noopener noreferrer">https://nationalinterest.org/feature/how-the-shah-entangled-america-8821</a></div>
+
+            <div class="citation"><span class="num">[84]</span> Hoveman, Rob. "How Iran's 1979 revolution deposed hated Shah." <em>Socialist Worker</em> (UK), Issue 2962, 30 June 2025. <a href="https://socialistworker.co.uk/in-depth/how-irans-1979-revolution-deposed-of-hated-shah/" target="_blank" rel="noopener noreferrer">https://socialistworker.co.uk/in-depth/how-irans-1979-revolution-deposed-of-hated-shah/</a></div>
+
+            <div class="citation"><span class="num">[85]</span> "What Does 'Ayatollah' Mean?" <em>The Monastery</em> (Universal Life Church Monastery). <a href="https://www.themonastery.org/blog/what-does-ayatollah-mean" target="_blank" rel="noopener noreferrer">https://www.themonastery.org/blog/what-does-ayatollah-mean</a></div>
+
+            <div class="citation"><span class="num">[86]</span> "White Revolution and the Emergence of Ruhollah Khomeini." <em>Fanack Chronicle of the Middle East and North Africa</em>, Fanack Foundation (Netherlands). <a href="https://fanack.com/iran/history-of-iran/white-revolution-and-the-emergence-of-ruhollah-khomeini/" target="_blank" rel="noopener noreferrer">https://fanack.com/iran/history-of-iran/white-revolution-and-the-emergence-of-ruhollah-khomeini/</a></div>
+
+            <div class="citation"><span class="num">[87]</span> "Is presence of a leader needed to unite Iran? How smuggled audio tapes of Khomeini from exile helped establish Islamic Republic." <em>WION News</em> (India), March 2026. <a href="https://www.wionews.com/world/is-presence-of-a-leader-needed-to-unify-iran-how-smuggled-audio-tapes-of-khomeini-from-exile-helped-establish-islamic-republic-iran-israel-us-war-1773396652650" target="_blank" rel="noopener noreferrer">https://www.wionews.com/world/is-presence-of-a-leader-needed-to-unify-iran-how-smuggled-audio-tapes-of-khomeini-from-exile-helped-establish-islamic-republic-iran-israel-us-war-1773396652650</a></div>
+
+            <div class="citation"><span class="num">[88]</span> "Ayatollah Khomeini: The Architect of Theocratic Revolution." <em>Explaining History Podcast</em>, 1 September 2025. <a href="https://explaininghistory.org/2025/09/01/ayatollah-khomeini-the-architect-of-theocratic-revolution/" target="_blank" rel="noopener noreferrer">https://explaininghistory.org/2025/09/01/ayatollah-khomeini-the-architect-of-theocratic-revolution/</a></div>
+
+            <div class="citation"><span class="num">[89]</span> "The Presidents and the Shah: A Strategic Partnership." <em>American Experience</em>, PBS / WGBH Educational Foundation. <a href="https://www.pbs.org/wgbh/americanexperience/features/taken-hostage-presidents-shah-strategic-partnership/" target="_blank" rel="noopener noreferrer">https://www.pbs.org/wgbh/americanexperience/features/taken-hostage-presidents-shah-strategic-partnership/</a></div>
+
+
+            <!-- ===== Image Credits ===== -->
+            <h3 class="section-heading">Image Credits &amp; Attributions</h3>
+
+            <p class="section-intro">All archival and contemporary photographs used in this episode are sourced from <strong>Wikimedia Commons</strong> under Creative Commons licenses, with one additional image from <strong>NASA</strong> (public domain). Creators are credited below per the terms of each license (Title, Author, Source, License — "TASL"). AI-generated imagery and Pexels imagery used elsewhere in production do not require attribution under their respective licenses.</p>
+
+            <h4 class="subsection-heading">§ CC BY 4.0</h4>
+
+            <div class="credit-entry"><strong>"Shah Mohammad Reza Pahlavi and Farah Diba in Finland 1970 (JOKAMAL2B19-43)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Finland_1970_(JOKAMAL2B19-43).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Finland_1970_(JOKAMAL2B19-43).tif</a></div>
+
+            <div class="credit-entry"><strong>"Shah Mohammad Reza Pahlavi and Farah Diba in Helsinki 1970 (JOKAMAL2B19-36)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Helsinki_1970_(JOKAMAL2B19-36).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Helsinki_1970_(JOKAMAL2B19-36).tif</a></div>
+
+            <div class="credit-entry"><strong>"President Kekkonen and Shah Mohammad Reza Pahlavi 1970 (JOKAMAL2B19-10)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:President_Kekkonen_and_Shah_Mohammad_Reza_Pahlavi_1970_(JOKAMAL2B19-10).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:President_Kekkonen_and_Shah_Mohammad_Reza_Pahlavi_1970_(JOKAMAL2B19-10).tif</a></div>
+
+            <div class="credit-entry"><strong>"Shah Mohammad Reza Pahlavi and Farah Diba in Kuopio 1970 (JOKAMAL2B19-11)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Kuopio_1970_(JOKAMAL2B19-11).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Kuopio_1970_(JOKAMAL2B19-11).tif</a></div>
+
+            <div class="credit-entry"><strong>"2022-04-01 Iran, Tehran DSC 1209 DxO"</strong> by Laurens R. Krol, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:2022-04-01_Iran,_Tehran_DSC_1209_DxO.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:2022-04-01_Iran,_Tehran_DSC_1209_DxO.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Shah Mohammad Reza Pahlavi and Farah Diba in Tapiola 1970 (JOKAMAL2B19-2)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Tapiola_1970_(JOKAMAL2B19-2).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Tapiola_1970_(JOKAMAL2B19-2).tif</a></div>
+
+            <div class="credit-entry"><strong>"June 3, 1963 speech by Ruhollah Khomeini — Feyziyeh School, Qom (8)"</strong> by emam.com, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:June_3,_1963_speech_by_Ruhollah_Khomeini-_Feyziyeh_School,_Qom_(8).jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:June_3,_1963_speech_by_Ruhollah_Khomeini-_Feyziyeh_School,_Qom_(8).jpg</a></div>
+
+            <div class="credit-entry"><strong>"Ruhollah Khomeini and Ali Khamenei at 1970's"</strong> by khamenei.ir, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Ruhollah_Khomeini_and_Ali_Khamenei_at_1970%27s.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Ruhollah_Khomeini_and_Ali_Khamenei_at_1970%27s.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Shah Mohammad Reza Pahlavi and Farah Diba in Finland 1970 (JOKAMAL2B19-42)"</strong> by Markku Lepola, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Finland_1970_(JOKAMAL2B19-42).tif" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shah_Mohammad_Reza_Pahlavi_and_Farah_Diba_in_Finland_1970_(JOKAMAL2B19-42).tif</a></div>
+
+            <div class="credit-entry"><strong>"Iranian Majlis"</strong> by Mahdi Sigari, via Wikimedia Commons.<br>License (CC BY 4.0): <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Iranian_Majlis.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Iranian_Majlis.jpg</a></div>
+
+
+            <h4 class="subsection-heading">§ CC BY 3.0</h4>
+
+            <div class="credit-entry"><strong>"Baharestan-majles"</strong> by Nasser-sadeghi, via Wikimedia Commons.<br>License (CC BY 3.0): <a href="https://creativecommons.org/licenses/by/3.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/3.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Baharestan-majles.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Baharestan-majles.jpg</a></div>
+
+
+            <h4 class="subsection-heading">§ CC BY 2.0</h4>
+
+            <div class="credit-entry"><strong>"Secret Intelligence Service building at night"</strong> by Ashley Van Haeften, via Wikimedia Commons.<br>License (CC BY 2.0): <a href="https://creativecommons.org/licenses/by/2.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by/2.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Secret_Intelligence_Service_building_at_night.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Secret_Intelligence_Service_building_at_night.jpg</a></div>
+
+
+            <h4 class="subsection-heading">§ CC BY-SA 4.0</h4>
+
+            <div class="credit-entry"><strong>"Communist Party of Vietnam Poster in Hanoi"</strong> by Jp16103, via Wikimedia Commons.<br>License (CC BY-SA 4.0): <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Communist_Party_of_Vietnam_Poster_in_Hanoi.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Communist_Party_of_Vietnam_Poster_in_Hanoi.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Clergy from Iran (02)"</strong> by Mostafameraji, via Wikimedia Commons.<br>License (CC BY-SA 4.0): <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Clergy_from_iran_%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C%D8%AA_%D8%AF%D8%B1_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86_02.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Clergy_from_iran_%D8%B1%D9%88%D8%AD%D8%A7%D9%86%DB%8C%D8%AA_%D8%AF%D8%B1_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86_02.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Shia clerics from Iran, Qasr-e Shirin, Kermanshah (03)"</strong> by Mostafameraji, via Wikimedia Commons.<br>License (CC BY-SA 4.0): <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Shia_clerics_from_Iran,_Qasr-e_Shirin,_Kermanshah_%D8%B7%D9%84%D8%A8%D9%87_%D9%87%D8%A7%DB%8C_%D8%AD%D8%A7%D8%B6%D8%B1_%D8%AF%D8%B1_%D8%B3%D9%85%DB%8C%D9%86%D8%A7%D8%B1%DB%8C_%D8%AF%D8%B1_%D9%82%D8%B5%D8%B1_%D8%B4%DB%8C%D8%B1%DB%8C%D9%86_03.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Shia_clerics_from_Iran,_Qasr-e_Shirin,_Kermanshah_%D8%B7%D9%84%D8%A8%D9%87_%D9%87%D8%A7%DB%8C_%D8%AD%D8%A7%D8%B6%D8%B1_%D8%AF%D8%B1_%D8%B3%D9%85%DB%8C%D9%86%D8%A7%D8%B1%DB%8C_%D8%AF%D8%B1_%D9%82%D8%B5%D8%B1_%D8%B4%DB%8C%D8%B1%DB%8C%D9%86_03.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Almahdi — Panoramic view towards south"</strong> by Ckazemi, via Wikimedia Commons.<br>License (CC BY-SA 4.0): <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Almahdi_Panoramic_view_towards_south.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Almahdi_Panoramic_view_towards_south.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Mohammad Mosaddegh's Former Office (now Soore University Faculty of Architecture), Tehran"</strong> by Sasan77Abdi, via Wikimedia Commons.<br>License (CC BY-SA 4.0): <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/4.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86_%D8%AF%D8%A7%D9%86%D8%B4%DA%A9%D8%AF%DB%80_%D9%85%D8%B9%D9%85%D8%A7%D8%B1%DB%8C_%D9%88_%D8%B4%D9%87%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C_%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87_%D8%B3%D9%88%D8%B1%D9%87.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:%D8%B3%D8%A7%D8%AE%D8%AA%D9%85%D8%A7%D9%86_%D8%AF%D8%A7%D9%86%D8%B4%DA%A9%D8%AF%DB%80_%D9%85%D8%B9%D9%85%D8%A7%D8%B1%DB%8C_%D9%88_%D8%B4%D9%87%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C_%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87_%D8%B3%D9%88%D8%B1%D9%87.jpg</a></div>
+
+
+            <h4 class="subsection-heading">§ CC BY-SA 3.0</h4>
+
+            <div class="credit-entry"><strong>"Hallam Street Blitz Bomb Damage"</strong> by City of Westminster Archives Centre, via Wikimedia Commons.<br>License (CC BY-SA 3.0): <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/3.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Hallam_Street_Blitz_Bomb_Damage.JPG" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Hallam_Street_Blitz_Bomb_Damage.JPG</a></div>
+
+
+            <h4 class="subsection-heading">§ CC BY-SA 2.0</h4>
+
+            <div class="credit-entry"><strong>"Northern Tehran Towers Night view"</strong> by Saeid Zebardast, via Wikimedia Commons.<br>License (CC BY-SA 2.0): <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/2.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Northern_Tehran_Towers_Night_view.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Northern_Tehran_Towers_Night_view.jpg</a></div>
+
+            <div class="credit-entry"><strong>"Oil Tankers at Fawley Marine terminal"</strong> by David Dixon, via Wikimedia Commons.<br>License (CC BY-SA 2.0): <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/2.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Oil_Tankers_at_Fawley_Marine_terminal_-_geograph.org.uk_-_7291485.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Oil_Tankers_at_Fawley_Marine_terminal_-_geograph.org.uk_-_7291485.jpg</a></div>
+
+
+            <div class="legal-note">
+                <h4>A note on ShareAlike (CC BY-SA) licenses</h4>
+                <p>Several of the images above are licensed under <strong>CC BY-SA</strong> (ShareAlike) variants. The ShareAlike condition means that if any of these images are modified significantly, the derivative work must be released under the same or a compatible license. For incidental use within this documentary (where the image is shown within a larger original work), standard industry practice is that the documentary film itself is not required to be relicensed — only the individual modified image would be, if redistributed separately. Attribution alone satisfies the ShareAlike condition in this use case.</p>
+            </div>
+
+
+            <h4 class="subsection-heading">§ Public Domain (Government Imagery)</h4>
+
+            <div class="credit-entry"><strong>"ISS063-E-81262 — Iran from the International Space Station"</strong> by NASA / ISS Expedition 63 crew.<br>Source: <a href="https://eol.jsc.nasa.gov/searchphotos/photo.pl?mission=ISS063&amp;roll=E&amp;frame=81262" target="_blank" rel="noopener noreferrer">https://eol.jsc.nasa.gov/searchphotos/photo.pl?mission=ISS063&amp;roll=E&amp;frame=81262</a><br><em>NASA imagery is generally not subject to copyright in the United States (Title 17 U.S.C. § 105). Courtesy credit provided per NASA's standard media usage guidelines.</em></div>
+
+
+            <!-- ===== Archival Footage ===== -->
+            <h3 class="section-heading">Archival Footage &amp; News Clips</h3>
+
+            <p class="section-intro">News footage used in this episode is incorporated under the <strong>fair use doctrine</strong> of US copyright law (17 U.S.C. § 107) for purposes of commentary, criticism, and historical reference. All clips are brief excerpts (approximately 3–8 seconds each), with original audio muted and replaced by the documentary's own narration and score. Full credit to original sources is provided below.</p>
+
+            <h4 class="subsection-heading">§ Fair Use (News Footage)</h4>
+
+            <div class="credit-entry"><strong>"Iranian missiles seen from Lebanese wedding party near Israeli border | AFP"</strong> by AFP News Agency.<br>Source: <a href="https://www.youtube.com/watch?v=fWlOZa3Yfyc" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=fWlOZa3Yfyc</a></div>
+
+            <div class="credit-entry"><strong>"US-Iran War: Iranian Missile Strikes Strain Israel's Iron Dome | WION News"</strong> by WION.<br>Source: <a href="https://www.youtube.com/watch?v=yh4Fcwhj-mI" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=yh4Fcwhj-mI</a></div>
+
+            <div class="credit-entry"><strong>"Protests sweep Iran as authorities intensify crackdown on demonstrators"</strong> by FRANCE 24 English.<br>Source: <a href="https://www.youtube.com/watch?v=5i9P-3dKqrQ" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=5i9P-3dKqrQ</a></div>
+
+            <div class="credit-entry"><strong>"Dangerous rescue mission underway after US fighter jet shot down over Iran"</strong> by ABC News.<br>Source: <a href="https://www.youtube.com/watch?v=RIHnC3QTgSU" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=RIHnC3QTgSU</a></div>
+
+            <div class="credit-entry"><strong>"What You Need To Know – Attack on Iran Special Edition – Saturday, February 28, 2026"</strong> by ABC News.<br>Source: <a href="https://www.youtube.com/watch?v=nuBgh786s3I" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=nuBgh786s3I</a></div>
+
+            <div class="credit-entry"><strong>"Why India Blocked Iran's Oil Tankers In Arabian Sea"</strong> by Republic World.<br>Source: <a href="https://www.youtube.com/watch?v=xAEsUS6RsWE" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=xAEsUS6RsWE</a></div>
+
+            <div class="credit-entry"><strong>"Annual army parade takes place in Tehran to celebrate National Army Day"</strong> by AP Archive (Associated Press), 18 April 2025.<br>Source: <a href="https://www.youtube.com/watch?v=GjJJA8Wy4Hs" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=GjJJA8Wy4Hs</a></div>
+
+
+            <h4 class="subsection-heading">§ Public Domain (Government Footage)</h4>
+
+            <div class="credit-entry"><strong>"USS Gerald R. Ford Aircraft Carrier Defense System Capabilities"</strong> — United States Navy footage (retrieved via the "Military News" YouTube channel).<br>Source: <a href="https://www.youtube.com/watch?v=oQrrUOnS0q0" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=oQrrUOnS0q0</a><br><em>Footage produced by the United States Navy is in the public domain under Title 17 U.S.C. § 105, which places works of the US federal government outside copyright protection. The Military News YouTube channel is cited as the point of retrieval; no additional rights are claimed by that channel over the underlying public-domain US Navy footage.</em></div>
+
+
+            <!-- ===== Notes ===== -->
+            <div class="notes-block">
+                <h3>Notes</h3>
+                <ul>
+                    <li>Sources are numbered [1]–[89] within this episode, grouped by source type. Each episode in the series uses independent numbering.</li>
+                    <li>Every URL was verified working on the date of publication.</li>
+                    <li>Image credits are provided in the <strong>Image Credits &amp; Attributions</strong> section above, organized by Creative Commons license type (with a separate Public Domain subsection for government imagery), per the TASL (Title, Author, Source, License) standard for Wikimedia Commons reuse.</li>
+                    <li>Archival video footage and news clips are credited in the <strong>Archival Footage &amp; News Clips</strong> section above, with fair use and public domain materials kept in distinct subsections reflecting their different legal frameworks.</li>
+                </ul>
+                <p class="last-updated">Last updated: April 28, 2026.</p>
+            </div>
+
+        </section>
+
+        <!-- ========== FOOTER ========== -->
+        <footer>
+            <a href="/">&larr; Back to MDK Archive</a>
+        </footer>
+
+    </div>
+</body>
+</html>
