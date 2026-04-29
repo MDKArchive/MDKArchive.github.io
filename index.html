@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDK Archive</title>
-    <meta name="description" content="Independent documentary channel. Deeply sourced films on the questions worth asking.">
+    <meta name="description" content="Independent documentary channel. Episode 1 of The Iran Conflict — Why Iran and America Are Enemies — is now streaming.">
 
     <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="MDK Archive">
-    <meta property="og:description" content="Be the person who actually knows what's going on. Rigorously sourced documentaries on the questions behind the news.">
+    <meta property="og:description" content="Episode 1 of The Iran Conflict — Why Iran and America Are Enemies — is now streaming. Rigorously sourced documentaries on the questions behind the news.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mdkarchive.com">
 
@@ -94,6 +94,41 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.85;
+        }
+
+        /* Now Streaming label */
+        .now-streaming {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: 0.05em;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .streaming-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #C8102E;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.6);
+            }
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 0 6px rgba(200, 16, 46, 0);
+            }
         }
 
         /* Primary CTA Button */
@@ -244,8 +279,13 @@
             MDK Archive produces deeply sourced documentaries on the questions most people wonder about but never have time to research &mdash; the stories with the context stripped out, the forces reshaping the modern world, the history behind the headlines. Rigorously fact-checked. Every source published publicly. Built for the curious.
         </p>
 
-        <a class="cta-button" href="https://youtube.com/@MDKArchive" target="_blank" rel="noopener noreferrer">
-            Watch the Latest Episode
+        <div class="now-streaming">
+            <span class="streaming-dot" aria-hidden="true"></span>
+            Now Streaming &mdash; Episode 1: The First Betrayal
+        </div>
+
+        <a class="cta-button" href="https://www.youtube.com/watch?v=927On9VPYHM" target="_blank" rel="noopener noreferrer">
+            Watch Episode 1
         </a>
 
         <nav class="social-links" aria-label="Social media">
