@@ -155,6 +155,16 @@
             font-style: italic;
         }
 
+        .episode-index .index-meta {
+            font-size: 0.78rem;
+            opacity: 0.55;
+            margin-top: -10px;
+            margin-bottom: 18px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
         /* ----- Episode Section ----- */
         .episode-section {
             margin-bottom: 80px;
@@ -391,6 +401,93 @@
             outline: none;
         }
 
+        /* ----- Collapsible Film Cards ----- */
+        .film-card {
+            margin-bottom: 30px;
+            background-color: rgba(245, 245, 240, 0.02);
+            border-left: 3px solid rgba(245, 245, 240, 0.15);
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .film-card[open] {
+            border-left-color: #C8102E;
+            background-color: rgba(245, 245, 240, 0.03);
+        }
+
+        .film-card summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 28px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+            user-select: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .film-card summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .film-card summary:hover,
+        .film-card summary:focus {
+            background-color: rgba(245, 245, 240, 0.04);
+            outline: none;
+        }
+
+        .film-card summary:focus-visible {
+            outline: 2px solid #C8102E;
+            outline-offset: -2px;
+        }
+
+        .film-card-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.15rem, 3vw, 1.4rem);
+            font-weight: 900;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            line-height: 1.25;
+        }
+
+        .film-card-meta {
+            font-size: 0.78rem;
+            opacity: 0.55;
+            margin-top: 8px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .film-card-toggle {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #C8102E;
+            line-height: 1;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .film-card[open] .film-card-toggle::before {
+            content: "−";
+        }
+
+        .film-card:not([open]) .film-card-toggle::before {
+            content: "+";
+        }
+
+        .film-card-content {
+            padding: 0 32px 40px 32px;
+            border-top: 1px solid rgba(245, 245, 240, 0.08);
+            padding-top: 24px;
+        }
+
+        .film-card-content > .section-heading:first-child,
+        .film-card-content > .episode-subtitle:first-child {
+            margin-top: 0;
+        }
+
         /* ----- Mobile adjustments ----- */
         @media (max-width: 600px) {
             body {
@@ -408,6 +505,16 @@
 
             .citation {
                 padding-left: 28px;
+            }
+
+            .film-card summary {
+                padding: 22px 20px;
+                gap: 16px;
+            }
+
+            .film-card-content {
+                padding: 0 20px 32px 20px;
+                padding-top: 20px;
             }
         }
 
@@ -435,24 +542,223 @@
             </p>
         </header>
 
-        <!-- ========== EPISODE INDEX ========== -->
-        <nav class="episode-index" aria-label="Episode index">
-            <h2>The Iran Conflict — Episode Index</h2>
+        <!-- ========== DOCUMENTARY INDEX ========== -->
+        <nav class="episode-index" aria-label="Standalone documentaries index">
+            <h2>Standalone Documentaries</h2>
             <ul>
-                <li><a href="#episode-1">Episode 1 — The First Betrayal</a></li>
-                <li><span class="coming-soon">Episode 2 — Coming soon</span></li>
-                <li><span class="coming-soon">Episode 3 — Coming soon</span></li>
-                <li><span class="coming-soon">Episode 4 — Coming soon</span></li>
-                <li><span class="coming-soon">Episode 5 — Coming soon</span></li>
+                <li><a href="#gas-prices">If America Has the Most Oil, Why Is Gas So Expensive? &mdash; May 2026</a></li>
+            </ul>
+        </nav>
+
+        <nav class="episode-index" aria-label="The Iran Conflict series index">
+            <h2>The Iran Conflict &mdash; Series</h2>
+            <p class="index-meta">Ongoing series &middot; Latest installment: April 2026</p>
+            <ul>
+                <li><a href="#episode-1">Episode 1 &mdash; The First Betrayal</a></li>
+                <li><span class="coming-soon">Episode 2 &mdash; Coming soon</span></li>
+                <li><span class="coming-soon">Episode 3 &mdash; Coming soon</span></li>
+                <li><span class="coming-soon">Episode 4 &mdash; Coming soon</span></li>
+                <li><span class="coming-soon">Episode 5 &mdash; Coming soon</span></li>
             </ul>
         </nav>
 
         <!-- ========================================
+             STANDALONE — IF AMERICA HAS THE MOST OIL,
+             WHY IS GAS SO EXPENSIVE?
+             ======================================== -->
+        <details class="film-card" id="gas-prices">
+            <summary>
+                <div>
+                    <div class="film-card-title">If America Has the Most Oil, Why Is Gas So Expensive?</div>
+                    <div class="film-card-meta">Standalone Documentary &middot; May 2026</div>
+                </div>
+                <span class="film-card-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="film-card-content">
+
+            <p class="episode-subtitle">A standalone documentary by MDK Archive, with bridging continuity to <em>The Iran Conflict</em> &mdash; Episode 1.</p>
+
+            <p class="section-intro">
+                <strong>Citation format:</strong> Chicago Manual of Style (Notes-Bibliography), the standard format for historical and documentary scholarship.<br>
+                <strong>Sourcing standard:</strong> Primary documents, peer-reviewed academic works, authoritative reference works, major news organizations, and credentialed research institutions. No Wikipedia.
+            </p>
+
+            <!-- Statement on Sourcing -->
+            <div class="statement-block">
+                <p><strong>Statement on Sourcing.</strong> This documentary is independently produced and rigorously fact-checked. Every factual claim in this video has been verified against a primary government document, peer-reviewed academic work, authoritative reference, major news organization, or credentialed research institution. Internal source-check workflow logged 11 narration revisions, 3 on-screen attribution refinements, 1 source replacement, and 1 cut prior to release.</p>
+                <p>If you believe any claim in this video is inaccurate, please contact us with the specific claim and your source. We take factual accuracy seriously and will issue public corrections when warranted.</p>
+            </div>
+
+            <!-- ===== Primary Documents ===== -->
+            <h3 class="section-heading">Primary Documents &amp; Government Archives</h3>
+
+            <div class="citation"><span class="num">[1]</span> The White House. "National Energy Dominance Month, 2025." <em>Presidential Proclamations</em>, October 2025. <a href="https://www.whitehouse.gov/presidential-actions/2025/10/national-energy-dominance-month-2025/" target="_blank" rel="noopener noreferrer">https://www.whitehouse.gov/presidential-actions/2025/10/national-energy-dominance-month-2025/</a></div>
+
+            <div class="citation"><span class="num">[2]</span> U.S. Energy Information Administration. <em>Today in Energy</em>. <a href="https://www.eia.gov/todayinenergy/" target="_blank" rel="noopener noreferrer">https://www.eia.gov/todayinenergy/</a></div>
+
+            <div class="citation"><span class="num">[3]</span> Dunn, Candace, and Justine Barden. "Amid regional conflict, the Strait of Hormuz remains critical oil chokepoint." U.S. Energy Information Administration, <em>Today in Energy</em>, 16 June 2025. <a href="https://www.eia.gov/todayinenergy/detail.php?id=65504" target="_blank" rel="noopener noreferrer">https://www.eia.gov/todayinenergy/detail.php?id=65504</a></div>
+
+            <div class="citation"><span class="num">[4]</span> Schott, Kenya. "Petroleum liquids supply growth driven by non-OPEC+ countries in 2025 and 2026." U.S. Energy Information Administration, <em>Today in Energy</em>, 13 February 2025. <a href="https://www.eia.gov/todayinenergy/detail.php?id=64565" target="_blank" rel="noopener noreferrer">https://www.eia.gov/todayinenergy/detail.php?id=64565</a></div>
+
+            <div class="citation"><span class="num">[5]</span> U.S. Energy Information Administration. "Gasoline explained: Regional gasoline price differences." <em>Energy Explained</em>. <a href="https://www.eia.gov/energyexplained/gasoline/regional-price-differences.php" target="_blank" rel="noopener noreferrer">https://www.eia.gov/energyexplained/gasoline/regional-price-differences.php</a></div>
+
+            <div class="citation"><span class="num">[6]</span> U.S. Energy Information Administration. "When was the last refinery built in the United States?" <em>Frequently Asked Questions</em>. <a href="https://www.eia.gov/tools/faqs/faq.php?id=29&amp;t=6" target="_blank" rel="noopener noreferrer">https://www.eia.gov/tools/faqs/faq.php?id=29&amp;t=6</a></div>
+
+            <div class="citation"><span class="num">[7]</span> U.S. Energy Information Administration. <em>Weekly Petroleum Status Report</em>. <a href="https://www.eia.gov/petroleum/supply/weekly/" target="_blank" rel="noopener noreferrer">https://www.eia.gov/petroleum/supply/weekly/</a></div>
+
+            <div class="citation"><span class="num">[8]</span> U.S. Department of Energy. "United States to Release 172 Million Barrels of Oil From the Strategic Petroleum Reserve." Statement by Energy Secretary Christopher Wright, 11 March 2026. <a href="https://www.energy.gov/articles/united-states-release-172-million-barrels-oil-strategic-petroleum-reserve" target="_blank" rel="noopener noreferrer">https://www.energy.gov/articles/united-states-release-172-million-barrels-oil-strategic-petroleum-reserve</a></div>
+
+            <div class="citation"><span class="num">[9]</span> U.S. Department of Energy, Office of Petroleum Reserves. "SPR Quick Facts." Strategic Petroleum Reserve. <a href="https://www.energy.gov/hgeo/opr/spr-quick-facts" target="_blank" rel="noopener noreferrer">https://www.energy.gov/hgeo/opr/spr-quick-facts</a></div>
+
+            <div class="citation"><span class="num">[10]</span> Federal Reserve Bank of Dallas. "Dallas Fed Energy Survey &mdash; First Quarter 2026 Update." 23 April 2026. <a href="https://www.dallasfed.org/research/surveys/des/2026/2601/2601update" target="_blank" rel="noopener noreferrer">https://www.dallasfed.org/research/surveys/des/2026/2601/2601update</a></div>
+
+            <div class="citation"><span class="num">[11]</span> C-SPAN. "Trump Says Rising Gas Prices Are 'A Very Small Price to Pay' for the Iran War." Video clip from White House event, May 2026. <a href="https://www.c-span.org/clip/white-house-event/trump-says-rising-gas-prices-are-a-very-small-price-to-pay-for-the-iran-war/5199900" target="_blank" rel="noopener noreferrer">https://www.c-span.org/clip/white-house-event/trump-says-rising-gas-prices-are-a-very-small-price-to-pay-for-the-iran-war/5199900</a></div>
+
+            <div class="citation"><span class="num">[12]</span> ExxonMobil Corporation. "ExxonMobil's Plan Powers Investment Across Industry-Leading Portfolio with Increased Earnings and Cash Flow." Press release, 9 December 2025. <a href="https://investor.exxonmobil.com/company-information/press-releases/detail/1198/exxonmobil-raises-its-2030-plan-transformation" target="_blank" rel="noopener noreferrer">https://investor.exxonmobil.com/company-information/press-releases/detail/1198/exxonmobil-raises-its-2030-plan-transformation</a></div>
+
+            <div class="citation"><span class="num">[13]</span> ExxonMobil Corporation. <em>Form 10-Q, First Quarter 2026 (period ended March 31, 2026)</em>. U.S. Securities and Exchange Commission, filed 4 May 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000034088/000003408826000067/xom-20260331.htm" target="_blank" rel="noopener noreferrer">https://www.sec.gov/Archives/edgar/data/0000034088/000003408826000067/xom-20260331.htm</a></div>
+
+            <div class="citation"><span class="num">[14]</span> ExxonMobil Corporation. <em>Form 10-K, Annual Report for Fiscal Year 2025 (period ended December 31, 2025)</em>. U.S. Securities and Exchange Commission, filed 18 February 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000034088/000003408826000045/xom-20251231.htm" target="_blank" rel="noopener noreferrer">https://www.sec.gov/Archives/edgar/data/0000034088/000003408826000045/xom-20251231.htm</a></div>
+
+            <div class="citation"><span class="num">[15]</span> Chevron Corporation. <em>Form 8-K, First Quarter 2026 Earnings Release</em>. U.S. Securities and Exchange Commission, filed 1 May 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000093410/000009341026000110/a03312026ex9918-k.htm" target="_blank" rel="noopener noreferrer">https://www.sec.gov/Archives/edgar/data/0000093410/000009341026000110/a03312026ex9918-k.htm</a></div>
+
+            <div class="citation"><span class="num">[16]</span> BP p.l.c. <em>Form 6-K, First Quarter 2026 Group Results</em>. U.S. Securities and Exchange Commission, filed 28 April 2026. <a href="https://www.sec.gov/Archives/edgar/data/0000313807/000031380726000010/a31032026bp6kq1.htm" target="_blank" rel="noopener noreferrer">https://www.sec.gov/Archives/edgar/data/0000313807/000031380726000010/a31032026bp6kq1.htm</a></div>
+
+            <div class="citation"><span class="num">[17]</span> TotalEnergies SE. "First Quarter 2026 Results." Press release, 29 April 2026. <a href="https://totalenergies.com/news/press-releases/first-quarter-2026-results" target="_blank" rel="noopener noreferrer">https://totalenergies.com/news/press-releases/first-quarter-2026-results</a></div>
+
+            <div class="citation"><span class="num">[18]</span> Statistics Canada. <em>Consumer Price Index, March 2026</em>. Released 20 April 2026. <a href="https://www150.statcan.gc.ca/n1/daily-quotidien/260420/dq260420a-eng.htm" target="_blank" rel="noopener noreferrer">https://www150.statcan.gc.ca/n1/daily-quotidien/260420/dq260420a-eng.htm</a></div>
+
+            <div class="citation"><span class="num">[19]</span> House of Commons Library, United Kingdom Parliament. <em>Petrol and Diesel Prices</em>. Briefing Paper CBP-10601. <a href="https://commonslibrary.parliament.uk/research-briefings/cbp-10601/" target="_blank" rel="noopener noreferrer">https://commonslibrary.parliament.uk/research-briefings/cbp-10601/</a></div>
+
+
+            <!-- ===== Peer-Reviewed Academic Works ===== -->
+            <h3 class="section-heading">Peer-Reviewed Academic Works &amp; Books</h3>
+
+            <div class="citation"><span class="num">[20]</span> Breman, Carlotta, and Servaas Storm. "Betting on Black Gold: Oil Speculation and U.S. Inflation (2020&ndash;2022)." <em>International Journal of Political Economy</em> 52, no. 2 (April 2023): 153&ndash;180. Taylor &amp; Francis. DOI: 10.1080/08911916.2023.2238565. <a href="https://doi.org/10.1080/08911916.2023.2238565" target="_blank" rel="noopener noreferrer">https://doi.org/10.1080/08911916.2023.2238565</a>. Open-access working-paper version: Institute for New Economic Thinking, Working Paper No. 208. <a href="https://www.ineteconomics.org/uploads/papers/WP_208-Storm-and-Breman-Oil-price-speculation-and-inflation.pdf" target="_blank" rel="noopener noreferrer">https://www.ineteconomics.org/uploads/papers/WP_208-Storm-and-Breman-Oil-price-speculation-and-inflation.pdf</a></div>
+
+
+            <!-- ===== Authoritative Reference Works ===== -->
+            <h3 class="section-heading">Authoritative Reference Works</h3>
+
+            <div class="citation"><span class="num">[21]</span> AAA. <em>Fuel Gauge Report</em>. American Automobile Association. <a href="https://gasprices.aaa.com/" target="_blank" rel="noopener noreferrer">https://gasprices.aaa.com/</a></div>
+
+            <div class="citation"><span class="num">[22]</span> Harvard Business School. "Willy C. Shih &mdash; Robert and Jane Cizik Professor of Management Practice in Business Administration." <em>Faculty &amp; Research</em>. <a href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=194874" target="_blank" rel="noopener noreferrer">https://www.hbs.edu/faculty/Pages/profile.aspx?facId=194874</a></div>
+
+            <div class="citation"><span class="num">[23]</span> USC Marshall School of Business. "Michael A. Mische &mdash; Associate Professor of the Practice of Management and Organization." <em>Faculty Profile</em>. <a href="https://www.marshall.usc.edu/personnel/michael-mische" target="_blank" rel="noopener noreferrer">https://www.marshall.usc.edu/personnel/michael-mische</a></div>
+
+
+            <!-- ===== Major News Organizations ===== -->
+            <h3 class="section-heading">Major News Organizations</h3>
+
+            <div class="citation"><span class="num">[24]</span> Treisman, Rachel, and Joel Rose. "Gas prices keep rising amid Iran war, Hormuz disruption." <em>NPR</em>, 3 May 2026. <a href="https://www.npr.org/2026/05/03/nx-s1-5809433/gas-prices-rise-week-hormuz-iran-war" target="_blank" rel="noopener noreferrer">https://www.npr.org/2026/05/03/nx-s1-5809433/gas-prices-rise-week-hormuz-iran-war</a></div>
+
+            <div class="citation"><span class="num">[25]</span> Picchi, Aimee. "The U.S. is the world's leading oil producer. So why are gas prices soaring?" <em>CBS News</em>, 18 March 2026. <a href="https://www.cbsnews.com/news/gas-prices-us-oil-iran-war/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/gas-prices-us-oil-iran-war/</a></div>
+
+            <div class="citation"><span class="num">[26]</span> CBS News. "Trump administration releasing 172 million barrels of oil from strategic reserve as Iran war causes soaring prices." 11 March 2026. <a href="https://www.cbsnews.com/news/trump-oil-strategic-petroleum-reserve-iran-war/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/trump-oil-strategic-petroleum-reserve-iran-war/</a></div>
+
+            <div class="citation"><span class="num">[27]</span> CBS News. "Planned release of strategic reserve would put U.S. supplies at lowest levels in 44 years." 13 March 2026. <a href="https://www.cbsnews.com/news/planned-release-of-strategic-reserve-would-put-u-s-supplies-at-lowest-levels-in-44-years/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/planned-release-of-strategic-reserve-would-put-u-s-supplies-at-lowest-levels-in-44-years/</a></div>
+
+            <div class="citation"><span class="num">[28]</span> CBS News. "What is the Strategic Petroleum Reserve, and could it lower gas prices?" 10 March 2026. <a href="https://www.cbsnews.com/news/strategic-petroleum-reserve-spr-gas-prices/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/strategic-petroleum-reserve-spr-gas-prices/</a></div>
+
+            <div class="citation"><span class="num">[29]</span> Picchi, Aimee. "Here's what the Trump administration is doing to lower oil and gas prices. Is it working?" <em>CBS News</em>, 20 March 2026. <a href="https://www.cbsnews.com/news/gas-oil-prices-iran-war-trump/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/gas-oil-prices-iran-war-trump/</a></div>
+
+            <div class="citation"><span class="num">[30]</span> CBS News. "CBS News gas and oil price tracker shows how much energy costs are rising amid the Iran war." Last updated 22 April 2026. <a href="https://www.cbsnews.com/news/gas-oil-prices-cost-iran-war/" target="_blank" rel="noopener noreferrer">https://www.cbsnews.com/news/gas-oil-prices-cost-iran-war/</a></div>
+
+            <div class="citation"><span class="num">[31]</span> Goldman, David. "Big Oil's Q1 earnings drop on hedging losses, Wall Street eyes blowout Q2." <em>CNN Business</em>, 1 May 2026. <a href="https://www.cnn.com/2026/05/01/business/big-oil-earnings" target="_blank" rel="noopener noreferrer">https://www.cnn.com/2026/05/01/business/big-oil-earnings</a></div>
+
+            <div class="citation"><span class="num">[32]</span> Goldman, David. "The weirdest aspect of the Iran war that has befuddled oil experts." <em>CNN Business</em>, 1 May 2026. <a href="https://www.cnn.com/2026/05/01/business/oil-market-price-high-low-iran" target="_blank" rel="noopener noreferrer">https://www.cnn.com/2026/05/01/business/oil-market-price-high-low-iran</a></div>
+
+            <div class="citation"><span class="num">[33]</span> Cui, Mike, et al. "Gas prices rise to $4.46 per gallon and oil jumps as shippers stay out of Strait of Hormuz." <em>NBC News</em>, 5 May 2026. <a href="https://www.nbcnews.com/business/consumer/gas-prices-monday-oil-iran-hormuz-rcna343438" target="_blank" rel="noopener noreferrer">https://www.nbcnews.com/business/consumer/gas-prices-monday-oil-iran-hormuz-rcna343438</a></div>
+
+            <div class="citation"><span class="num">[34]</span> ABC News. "Why oil companies are profiting from the Iran war: Experts explain." May 2026. <a href="https://abcnews.com/Business/oil-companies-profiting-iran-war-experts-explain/story?id=132581572" target="_blank" rel="noopener noreferrer">https://abcnews.com/Business/oil-companies-profiting-iran-war-experts-explain/story?id=132581572</a></div>
+
+            <div class="citation"><span class="num">[35]</span> Bloomberg News. "US to Release 172 Million Barrels From SPR for IEA Plan to Tap Reserves." 11 March 2026. <a href="https://www.bloomberg.com/news/articles/2026-03-11/us-to-release-172-million-barrels-for-iea-plan-to-tap-reserves" target="_blank" rel="noopener noreferrer">https://www.bloomberg.com/news/articles/2026-03-11/us-to-release-172-million-barrels-for-iea-plan-to-tap-reserves</a></div>
+
+            <div class="citation"><span class="num">[36]</span> Denning, Liam. "The Oil Futures Market Is Lying to Us." <em>Bloomberg Opinion</em>, 24 April 2026. <a href="https://www.bloomberg.com/opinion/articles/2026-04-24/the-oil-futures-market-is-lying-to-us" target="_blank" rel="noopener noreferrer">https://www.bloomberg.com/opinion/articles/2026-04-24/the-oil-futures-market-is-lying-to-us</a></div>
+
+            <div class="citation"><span class="num">[37]</span> Axios. "Trump to release Strategic Petroleum Reserve to counter Iran war oil shock." 11 March 2026. <a href="https://www.axios.com/2026/03/11/trump-strategic-oil-reserve-gas-prices-iran-war" target="_blank" rel="noopener noreferrer">https://www.axios.com/2026/03/11/trump-strategic-oil-reserve-gas-prices-iran-war</a></div>
+
+            <div class="citation"><span class="num">[38]</span> Frazin, Rachel. "US to release 172M barrels from strategic oil reserve." <em>The Hill</em>, 11 March 2026. <a href="https://thehill.com/policy/energy-environment/5779863-us-to-release-oil-from-strategic-reserve-trump-says/" target="_blank" rel="noopener noreferrer">https://thehill.com/policy/energy-environment/5779863-us-to-release-oil-from-strategic-reserve-trump-says/</a></div>
+
+            <div class="citation"><span class="num">[39]</span> CNBC. "Iran war: Trump will release 172 million barrels of oil from Strategic Petroleum Reserve." 11 March 2026. <a href="https://www.cnbc.com/2026/03/11/iran-war-trump-oil-strategic-petroleum-reserve.html" target="_blank" rel="noopener noreferrer">https://www.cnbc.com/2026/03/11/iran-war-trump-oil-strategic-petroleum-reserve.html</a></div>
+
+            <div class="citation"><span class="num">[40]</span> CNBC. "Exxon Mobil CEO expects higher oil prices due to Iran war: 'The market hasn't seen the full impact.'" 1 May 2026. <a href="https://www.cnbc.com/2026/05/01/exxon-ceo-iran-war-oil-strait-hormuz.html" target="_blank" rel="noopener noreferrer">https://www.cnbc.com/2026/05/01/exxon-ceo-iran-war-oil-strait-hormuz.html</a></div>
+
+            <div class="citation"><span class="num">[41]</span> Domm, Patti. "U.S. gas prices hit $4 per gallon as fuel prices surge due to Iran war." <em>CNBC</em>, 31 March 2026. <a href="https://www.cnbc.com/2026/03/31/gas-oil-diesel-price-iran-war.html" target="_blank" rel="noopener noreferrer">https://www.cnbc.com/2026/03/31/gas-oil-diesel-price-iran-war.html</a></div>
+
+            <div class="citation"><span class="num">[42]</span> <em>Fortune</em>. "Exxon Mobil CEO sees 'more to come' on price spikes from Iran war as Exxon and Chevron beat estimates." 1 May 2026. <a href="https://fortune.com/2026/05/01/exxon-ceo-more-to-come-prices-spikes-iran-war-as-exxon-chevron-beat/" target="_blank" rel="noopener noreferrer">https://fortune.com/2026/05/01/exxon-ceo-more-to-come-prices-spikes-iran-war-as-exxon-chevron-beat/</a></div>
+
+            <div class="citation"><span class="num">[43]</span> Fox Business. "Oil surge tied to Iran conflict could keep gas prices rising despite recent dip." 28 March 2026. <a href="https://www.foxbusiness.com/economy/oil-has-surged-since-iran-conflict-gas-prices-may-not-done-rising" target="_blank" rel="noopener noreferrer">https://www.foxbusiness.com/economy/oil-has-surged-since-iran-conflict-gas-prices-may-not-done-rising</a></div>
+
+            <div class="citation"><span class="num">[44]</span> Calderone, Ali. "How High Could Gas Prices Go? What to Know About the Iran War's Ongoing Impact." <em>TIME</em>, 31 March 2026. <a href="https://time.com/article/2026/03/31/gas-prices-us-iran-war/" target="_blank" rel="noopener noreferrer">https://time.com/article/2026/03/31/gas-prices-us-iran-war/</a></div>
+
+            <div class="citation"><span class="num">[45]</span> CBC News. "Canada's annual inflation rate rose to 9.7% in March, fastest since 1991." Reporting on Statistics Canada release, 20 April 2026. <a href="https://www.cbc.ca/news/business/march-2026-inflation-rate-9.7170077" target="_blank" rel="noopener noreferrer">https://www.cbc.ca/news/business/march-2026-inflation-rate-9.7170077</a></div>
+
+            <div class="citation"><span class="num">[46]</span> <em>France 24</em> with AFP. "TotalEnergies profits surge amid Iran war, sparking calls for windfall tax." 29 April 2026. <a href="https://www.france24.com/en/business/20260429-totalenergies-first-quarter-profits-surge-amid-middle-east-war" target="_blank" rel="noopener noreferrer">https://www.france24.com/en/business/20260429-totalenergies-first-quarter-profits-surge-amid-middle-east-war</a></div>
+
+            <div class="citation"><span class="num">[47]</span> Associated Press, via <em>The Washington Times</em>. "High oil prices due to the Iran war weigh on everything from the gas pump to consumer goods." 30 April 2026. <a href="https://www.washingtontimes.com/news/2026/apr/30/iran-wars-effect-oil-prices-weigh-everything-gas-pump-consumer-goods/" target="_blank" rel="noopener noreferrer">https://www.washingtontimes.com/news/2026/apr/30/iran-wars-effect-oil-prices-weigh-everything-gas-pump-consumer-goods/</a></div>
+
+
+            <!-- ===== Specialized Publications ===== -->
+            <h3 class="section-heading">Specialized Publications &amp; Educational Media</h3>
+
+            <div class="citation"><span class="num">[48]</span> <em>BIC Magazine</em>. "America First Refining is building the first new oil refinery in Texas in nearly 50 years." 10 March 2026. <a href="https://www.bicmagazine.com/industry/refining-petrochem/america-first-refining-is-building-the-first-new-oil-refinery-texas/" target="_blank" rel="noopener noreferrer">https://www.bicmagazine.com/industry/refining-petrochem/america-first-refining-is-building-the-first-new-oil-refinery-texas/</a></div>
+
+            <div class="citation"><span class="num">[49]</span> Roden, Daniel B. "Over 400 million barrels will be added to the oil market soon &mdash; what are strategic reserves and what can they do?" <em>The Conversation</em>, 23 March 2026. <a href="https://theconversation.com/over-400-million-barrels-will-be-added-to-the-oil-market-soon-what-are-strategic-reserves-and-what-can-they-do-278370" target="_blank" rel="noopener noreferrer">https://theconversation.com/over-400-million-barrels-will-be-added-to-the-oil-market-soon-what-are-strategic-reserves-and-what-can-they-do-278370</a></div>
+
+
+            <!-- ===== Image Credits ===== -->
+            <h3 class="section-heading">Image Credits &amp; Attributions</h3>
+
+            <p class="section-intro">Image credits follow the Wikimedia Commons TASL (Title, Author, Source, License) standard, organized by license type. A separate Public Domain subsection is reserved for government imagery and other public-domain works. Where any image has been modified for use in this documentary (cropped, color-graded, etc.), the modification is indicated as required by the underlying license.</p>
+
+            <h4 class="subsection-heading">&sect; CC BY-SA 2.0</h4>
+
+            <div class="credit-entry"><strong>"Platformer 3, Shell Haven Oil Refinery"</strong> by Terry Joyce, photographed 20 September 2001, via Geograph Project / Wikimedia Commons.<br>License (CC BY-SA 2.0): <a href="https://creativecommons.org/licenses/by-sa/2.0" target="_blank" rel="noopener noreferrer">https://creativecommons.org/licenses/by-sa/2.0</a><br>Source: <a href="https://commons.wikimedia.org/wiki/File:Platformer_3,_Shell_Haven_Oil_Refinery_-_geograph.org.uk_-_591906.jpg" target="_blank" rel="noopener noreferrer">https://commons.wikimedia.org/wiki/File:Platformer_3,_Shell_Haven_Oil_Refinery_-_geograph.org.uk_-_591906.jpg</a></div>
+
+
+            <div class="legal-note">
+                <h4>A note on ShareAlike (CC BY-SA) licenses</h4>
+                <p>Some images used in MDK Archive documentaries are licensed under <strong>CC BY-SA</strong> (ShareAlike) variants. The ShareAlike condition means that if any of these images are modified significantly, the derivative work must be released under the same or a compatible license. For incidental use within a documentary (where the image is shown within a larger original work), standard industry practice is that the documentary film itself is not required to be relicensed &mdash; only the individual modified image would be, if redistributed separately. Attribution alone satisfies the ShareAlike condition in this use case.</p>
+            </div>
+
+
+            <!-- ===== Archival Footage ===== -->
+            <h3 class="section-heading">Archival Footage &amp; News Clips</h3>
+
+            <p class="section-intro"><em>Archival footage incorporated under fair use of US copyright law (17 U.S.C. &sect; 107) for purposes of commentary, criticism, and historical reference will be credited here, alongside any public-domain government footage (Title 17 U.S.C. &sect; 105). The C-SPAN clip cited above [11] is the only confirmed archival video at script lock; additional footage credits will be appended as production finalizes.</em></p>
+
+
+            <!-- ===== Notes ===== -->
+            <div class="notes-block">
+                <h3>Notes</h3>
+                <ul>
+                    <li>Sources are numbered [1]&ndash;[50] within this video. Each MDK Archive video uses independent numbering.</li>
+                    <li>Every URL was verified working on the date of script lock. Government data URLs (EIA Weekly Petroleum Status Report, DOE SPR Quick Facts, AAA Fuel Gauge Report) reflect data that updates on rolling cycles; readers should expect underlying figures to refresh while citation URLs remain stable.</li>
+                    <li>Where a single news article corroborates multiple claims in the documentary, that article is listed once. Where a primary government document is the underlying source and a news organization separately reported it, both entries are listed.</li>
+                    <li>Image credits and archival video credits are appended to this list as the post-production phase proceeds, organized by license type per the format established in <em>The Iran Conflict &mdash; Episode 1</em> citations.</li>
+                    <li>The internal source-check working documentation &mdash; including per-claim verbatim quotes, tier ratings, and revision history &mdash; is maintained as production reference and is available on request.</li>
+                </ul>
+                <p class="last-updated">Last updated: May 7, 2026.</p>
+            </div>
+
+            </div>
+        </details>
+
+
+        <!-- ========================================
              EPISODE 1 — THE FIRST BETRAYAL
              ======================================== -->
-        <section class="episode-section" id="episode-1">
+        <details class="film-card" id="episode-1">
+            <summary>
+                <div>
+                    <div class="film-card-title">Episode 1 &mdash; The First Betrayal</div>
+                    <div class="film-card-meta">The Iran Conflict &middot; Series &middot; April 2026</div>
+                </div>
+                <span class="film-card-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="film-card-content">
 
-            <h2 class="episode-header">Episode 1 &mdash; The First Betrayal</h2>
             <p class="episode-subtitle">From the series <em>The Iran Conflict: How Did We Get Here?</em></p>
 
             <p class="section-intro">
@@ -781,7 +1087,8 @@
                 <p class="last-updated">Last updated: April 28, 2026.</p>
             </div>
 
-        </section>
+            </div>
+        </details>
 
         <!-- ========== FOOTER ========== -->
         <footer>
