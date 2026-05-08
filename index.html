@@ -96,41 +96,100 @@
             opacity: 0.85;
         }
 
-        /* Now Streaming block (badge + film title) */
+        /* Now Streaming block (badge + featured thumbnail) */
         .now-streaming-block {
-            margin-bottom: 38px;
+            margin-bottom: 75px;
         }
 
         .now-streaming-badge {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 0.85rem;
-            font-weight: 400;
-            font-style: italic;
-            letter-spacing: 0.18em;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
-            opacity: 0.7;
-            margin-bottom: 20px;
+            opacity: 0.95;
+            margin-bottom: 26px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .film-title {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: clamp(1.5rem, 3.5vw, 2.1rem);
-            font-weight: 900;
-            line-height: 1.25;
-            letter-spacing: 0.01em;
-            max-width: 600px;
+        .featured-thumbnail {
+            display: block;
+            position: relative;
+            max-width: 560px;
             margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 1px solid rgba(245, 245, 240, 0.15);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .featured-thumbnail:hover,
+        .featured-thumbnail:focus {
+            border-color: #C8102E;
+            box-shadow: 0 12px 40px rgba(200, 16, 46, 0.25);
+            outline: none;
+        }
+
+        .featured-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .featured-thumbnail:hover img,
+        .featured-thumbnail:focus img {
+            transform: scale(1.03);
+        }
+
+        .featured-thumbnail-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0);
+            transition: background-color 0.3s ease;
+            pointer-events: none;
+        }
+
+        .featured-thumbnail:hover .featured-thumbnail-overlay,
+        .featured-thumbnail:focus .featured-thumbnail-overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        .play-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background-color: rgba(200, 16, 46, 0.95);
             color: #F5F5F0;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 6px;
+            opacity: 0;
+            transform: scale(0.85);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .featured-thumbnail:hover .play-icon,
+        .featured-thumbnail:focus .play-icon {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .streaming-dot {
             display: inline-block;
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background-color: #C8102E;
             border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
@@ -259,14 +318,13 @@
         .archive-item {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+            gap: 22px;
             color: #F5F5F0;
             text-decoration: none;
-            padding: 24px 28px;
+            padding: 20px 24px;
             border: 1px solid rgba(245, 245, 240, 0.18);
             transition: border-color 0.25s ease, background-color 0.25s ease;
-            max-width: 520px;
+            max-width: 600px;
             margin: 0 auto 14px auto;
             text-align: left;
         }
@@ -276,6 +334,38 @@
             border-color: #C8102E;
             background-color: rgba(200, 16, 46, 0.06);
             outline: none;
+        }
+
+        .archive-item-thumbnail {
+            display: block;
+            flex-shrink: 0;
+            width: 160px;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 1px solid rgba(245, 245, 240, 0.1);
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: border-color 0.25s ease;
+        }
+
+        .archive-item:hover .archive-item-thumbnail,
+        .archive-item:focus .archive-item-thumbnail {
+            border-color: rgba(200, 16, 46, 0.4);
+        }
+
+        .archive-item-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .archive-item-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+            min-width: 0;
+            gap: 16px;
         }
 
         .archive-item-content {
@@ -361,8 +451,18 @@
             }
 
             .archive-item {
-                padding: 20px 22px;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 16px;
                 gap: 14px;
+            }
+
+            .archive-item-thumbnail {
+                width: 100%;
+            }
+
+            .archive-item-body {
+                gap: 12px;
             }
 
             .archive-item-meta {
@@ -375,6 +475,16 @@
 
             .archive-item-subtitle {
                 font-size: 0.9rem;
+            }
+
+            .featured-thumbnail {
+                max-width: 100%;
+            }
+
+            .play-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.2rem;
             }
         }
 
@@ -406,22 +516,28 @@
                 <span class="streaming-dot" aria-hidden="true"></span>
                 Now Streaming
             </div>
-            <h2 class="film-title">If America Has the Most Oil, Why Is Gas So Expensive?</h2>
+            <a class="featured-thumbnail" href="https://youtu.be/RuYIkaXoX6Q" target="_blank" rel="noopener noreferrer" aria-label="Watch the documentary: If America Has the Most Oil, Why Is Gas So Expensive?">
+                <img src="images/oil_picture.png" alt="If America Has the Most Oil, Why Is Gas So Expensive?">
+                <span class="featured-thumbnail-overlay">
+                    <span class="play-icon" aria-hidden="true">&#9654;</span>
+                </span>
+            </a>
         </div>
-
-        <a class="cta-button" href="https://youtu.be/RuYIkaXoX6Q" target="_blank" rel="noopener noreferrer">
-            Watch the Documentary
-        </a>
 
         <section class="archive-section" aria-label="More from MDK Archive">
             <h2 class="archive-heading">From the Archive</h2>
             <a class="archive-item" href="https://youtu.be/927On9VPYHM" target="_blank" rel="noopener noreferrer">
-                <span class="archive-item-content">
-                    <span class="archive-item-meta">The Iran Conflict &mdash; Series &middot; Episode 1</span>
-                    <span class="archive-item-title">The First Betrayal</span>
-                    <span class="archive-item-subtitle">How America and Iran became enemies &mdash; the 1953 coup.</span>
+                <span class="archive-item-thumbnail">
+                    <img src="https://img.youtube.com/vi/927On9VPYHM/maxresdefault.jpg" alt="" loading="lazy">
                 </span>
-                <span class="archive-item-arrow" aria-hidden="true">&rarr;</span>
+                <span class="archive-item-body">
+                    <span class="archive-item-content">
+                        <span class="archive-item-meta">The Iran Conflict &mdash; Series &middot; Episode 1</span>
+                        <span class="archive-item-title">The First Betrayal</span>
+                        <span class="archive-item-subtitle">How America and Iran became enemies &mdash; the 1953 coup.</span>
+                    </span>
+                    <span class="archive-item-arrow" aria-hidden="true">&rarr;</span>
+                </span>
             </a>
         </section>
 
